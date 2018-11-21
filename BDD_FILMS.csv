@@ -1,4 +1,7 @@
-Titre,Description,Annee_de_sortie,,Genre,Realisateur
-avatar,mega budget,2009,,,James Cameron
-titanic,fait pleurer,1997,,,James Cameron
-black panther,je sais pas,2018,,,Ryan Coogler
+Titre,Description,Annee_de_sortie,Genre,Realisateur
+avatar,mega budget,2009,,James Cameron
+titanic,fait pleurer,1997,,James Cameron
+black panther,je sais pas,2018,,Ryan Coogler
+La ligne verte,"Paul Edgecomb, pensionnaire centenaire d'une maison de retraite, est hanté par ses souvenirs. Gardien-chef du pénitencier de Cold Mountain en 1935, il était chargé de veiller au bon déroulement des exécutions capitales en s’efforçant d'adoucir les derniers moments des condamnés",2000,,Frank Darabont
+Interstellar,"Le film raconte les aventures d’un groupe d’explorateurs qui utilisent une faille récemment découverte dans l’espace-temps afin de repousser les limites humaines et partir à la conquête des distances astronomiques dans un voyage interstellaire.",2014,,Christopher Nolan
+Alien, le huitième passager, "Le vaisseau commercial Nostromo et son équipage, sept hommes et femmes, rentrent sur Terre avec une importante cargaison de minerai. Mais lors d'un arrêt forcé sur une planète déserte, l'officier Kane se fait agresser par une forme de vie inconnue, une arachnide qui étouffe son visage.",1979,,Ridley Scott
