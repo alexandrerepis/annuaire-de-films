@@ -2,7 +2,7 @@
 
 // $_SERVER['REQUEST_URI'];
 
-$lien = $_GET['film'];
+$lien = $_GET['titre'];
 
 switch ($lien) {
     case 'value':
