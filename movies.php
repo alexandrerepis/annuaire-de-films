@@ -1,7 +1,11 @@
 <?php
+
+function openBDD ($sql) {
+
+
 $username = 'root';
 $password = 'online@2017';
-$database ='formation';
+$database ='films';
 $host = 'localhost';
 
     try{
@@ -14,12 +18,16 @@ $host = 'localhost';
 
     }
     
-    $sql = 'select * from Tab WHERE id=:num';
     $response = $bdd->prepare( $sql );
     // $response->bindParam(':num', $num, PDO::PARAM_INT)
     $response->execute();
-    $list =     $response->fetchAll(PDO::FETCH_ASSOC);
+    $list = $response->fetchAll(PDO::FETCH_ASSOC);
 
     foreach( $list as $row ){
-        echo $row['id'].'<br/>';
+        echo $row['titre']. $row['annee_de_sortie'] . "<br/>";
     }
+
+}
+
+
+   
