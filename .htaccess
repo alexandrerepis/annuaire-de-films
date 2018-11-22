@@ -1,0 +1,7 @@
+Options All -Indexes
+
+RewriteEngine On
+# RewriteCond %{HTTP_HOST} !^www.example.com$ [NC]
+# règle forte - redirige tout
+RewriteRule ^(.*)$ index.php?p=$1
+# RewriteRule ^((a-zA-Z0-9\-\_\/)*)$ index.php?p=$1 [L,R=301]
