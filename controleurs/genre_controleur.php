@@ -1,2 +1,7 @@
 <?php
-echo 'genre';
+
+
+echo $twig->render('genre.twig', array ( '' => $, '' => $, '' => $,'' => $, ));
+
+
+?>
