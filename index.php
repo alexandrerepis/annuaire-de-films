@@ -1,28 +1,33 @@
 <?php 
-$param = explode('/',$_SERVER['REQUEST_URI']);
-$lien = $param[2];
-if(isset($param[3])){
-    $action = $param[3];
-}
 
-switch ($lien) {
+    require_once 'vendor/autoload.php';
+    $loader = new Twig_Loader_Filesystem('vue');
+    $twig = new Twig_Environment($loader);
+
+
+$requete = explode("/", trim($_SERVER['REQUEST_URI'], "/"));
+$controller = (count($requete) === 1) ? "accueil" : $requete[1];
+$action = (count($requete) < 3)? "list" : $requete[2];
+$id = (count($requete) < 4) ? 0 : (int)$requete[3]; 
+
+switch ($controller) {
     case 'films':
-        require('controleurs/film_controleur.php');
+        require_once('controleurs/film_controleur.php');
         break;
 
     case 'date':
-        require('controleurs/date_controleur.php');
+        require_once('controleurs/date_controleur.php');
         break;
     
     case 'genre':
-        require('controleurs/genre_controleur.php');
+        require_once('controleurs/genre_controleur.php');
         break;
 
     case 'realisateur':
-        require('controleurs/realisateur_controleur.php');
+        require_once('controleurs/realisateur_controleur.php');
         break;
 
     default:
-    require('movies.php');
+        require_once('controleurs/film_controleur.php');
         break;
 }

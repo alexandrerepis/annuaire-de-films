@@ -23,10 +23,6 @@ $host = 'localhost';
     $response->execute();
     $list = $response->fetchAll(PDO::FETCH_ASSOC);
 
-    // foreach( $list as $row ){
-    //     echo $row['titre']. $row['annee_de_sortie'] . "<br/>";
-    // }
-
 }
 
 
