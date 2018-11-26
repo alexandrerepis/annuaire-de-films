@@ -33,3 +33,4 @@ switch ($lien) {
     require('movies.php');
         break;
 }
+

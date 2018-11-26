@@ -1,11 +1,16 @@
 <?php
 
+require_once 'vendor/autoload.php';
+$loader = new Twig_Loader_Filesystem('vues');
+$twig = new Twig_Environment($loader);
+$index = $twig->load('accueil.twig');
+
 function openBDD ($sql) {
 
 
 $username = 'root';
-$password = '';
-$database ='films';
+$password = 'online@2017';
+$database ='DB_FILMS';
 $host = 'localhost';
 
     try{
