@@ -3,8 +3,8 @@
 -- https://www.phpmyadmin.net/
 --
 -- Client :  localhost:3306
--- Généré le :  Dim 25 Novembre 2018 à 19:04
--- Version du serveur :  10.3.11-MariaDB-1:10.3.11+maria~bionic
+-- Généré le :  Lun 26 Novembre 2018 à 11:51
+-- Version du serveur :  10.3.11-MariaDB-1:10.3.11+maria~bionic-log
 -- Version de PHP :  7.2.10-0ubuntu0.18.04.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -19,6 +19,68 @@ SET time_zone = "+00:00";
 --
 -- Base de données :  `DB_FILMS`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `tbl_acteurs`
+--
+
+CREATE TABLE `tbl_acteurs` (
+  `id_acteur` int(4) NOT NULL,
+  `nom_acteur` varchar(255) NOT NULL,
+  `prenom_acteur` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Contenu de la table `tbl_acteurs`
+--
+
+INSERT INTO `tbl_acteurs` (`id_acteur`, `nom_acteur`, `prenom_acteur`) VALUES
+(1, 'Worthington', 'Sam'),
+(2, 'Saldana', 'Zoe'),
+(3, 'Weaver', 'Sigourney'),
+(4, 'Lang', 'Stephen'),
+(5, 'Dicaprio', 'Leonardo'),
+(6, 'Winslet', 'Kate'),
+(7, 'Zane', 'Billy'),
+(8, 'Bates', 'Kahty'),
+(9, 'Boseman', 'Chadwick'),
+(10, 'B.Jordan', 'Michael'),
+(11, 'Nyong\'o', 'Lupita'),
+(12, 'Gurira', 'Danai'),
+(13, 'Hanks', 'Tom'),
+(14, 'Clarke duncan', 'Michael'),
+(15, 'Morse', 'David'),
+(16, 'Hunt', 'Bonnie'),
+(17, 'McConaughey', 'Matthew'),
+(18, 'Hathaway', 'Anne'),
+(19, 'Caine', 'Michael'),
+(20, 'Lithgow', 'John'),
+(21, 'Skerritt', 'Tom'),
+(22, 'Cartwright', 'Veronica'),
+(23, 'Dean stanton', 'Harry'),
+(24, 'Robbins', 'Tim'),
+(25, 'Freeman', 'Morgan'),
+(26, 'Gunton', 'Bob'),
+(27, 'Sadler', 'William'),
+(28, 'Sinise', 'Gary'),
+(29, 'Wright', 'Robin'),
+(30, 'Williamson', 'Mykelti'),
+(31, 'Walken', 'Christopher'),
+(32, 'Sheen', 'Marin'),
+(33, 'Downey Jr.', 'Robert'),
+(34, 'Hemsworth', 'Chris'),
+(35, 'Ruffalo', 'Mark'),
+(36, 'Evans', 'Chris'),
+(37, 'Crowe', 'Russel'),
+(38, 'Phoenix', 'Joaquin'),
+(39, 'Nielsen', 'Connie'),
+(40, 'Reed', 'Olivier'),
+(41, 'Neeson', 'Liam'),
+(42, 'Kingsley', 'Ben'),
+(43, 'Fiennes', 'Ralph'),
+(44, 'Goodall', 'Caroline');
 
 -- --------------------------------------------------------
 
@@ -52,6 +114,71 @@ INSERT INTO `tbl_films` (`id`, `titre`, `description`, `annee_de_sortie`, `id_ge
 (10, 'Avengers infinity war', 'Les Avengers et leurs alliés devront être prêts à tout sacrifier pour neutraliser le redoutable Thanos avant que son attaque éclair ne conduise à la destruction complète de l’univers. ', 2018, '', '7'),
 (11, 'Gladiator', 'Le général romain Maximus est le plus fidèle soutien de l\'empereur Marc Aurèle, qu\'il a conduit de victoire en victoire avec une bravoure et un dévouement exemplaires. Jaloux du prestige de Maximus, et plus encore de l\'amour que lui voue l\'empereur, le fils de MarcAurèle, Commode, s\'arroge brutalement le pouvoir, puis ordonne l\'arrestation du général et son exécution. Maximus échappe à ses assassins mais ne peut empêcher le massacre de sa famille. Capturé par un marchand d\'esclaves, il devient gladiateur et prépare sa vengeance. ', 2000, '', '8'),
 (12, 'La liste de Schindler', 'Evocation des années de guerre d\'Oskar Schindler, industriel autrichien rentré à Cracovie en 1939 avec les troupes allemandes. Il va, tout au long de la guerre, protéger des juifs en les faisant travailler dans sa fabrique. ', 1994, '', '9');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `tbl_films_acteurs`
+--
+
+CREATE TABLE `tbl_films_acteurs` (
+  `id_film` int(4) NOT NULL,
+  `id_acteur` int(4) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Contenu de la table `tbl_films_acteurs`
+--
+
+INSERT INTO `tbl_films_acteurs` (`id_film`, `id_acteur`) VALUES
+(1, 1),
+(1, 2),
+(1, 3),
+(1, 4),
+(2, 5),
+(2, 6),
+(2, 7),
+(2, 8),
+(3, 9),
+(3, 10),
+(3, 11),
+(3, 12),
+(4, 13),
+(4, 14),
+(4, 15),
+(4, 16),
+(5, 17),
+(5, 18),
+(5, 19),
+(5, 20),
+(6, 3),
+(6, 21),
+(6, 22),
+(6, 23),
+(7, 24),
+(7, 25),
+(7, 26),
+(7, 27),
+(8, 13),
+(8, 28),
+(8, 29),
+(8, 30),
+(9, 5),
+(9, 13),
+(9, 31),
+(9, 32),
+(10, 33),
+(10, 34),
+(10, 35),
+(10, 36),
+(11, 37),
+(11, 38),
+(11, 39),
+(11, 40),
+(12, 41),
+(12, 42),
+(12, 43),
+(12, 44);
 
 -- --------------------------------------------------------
 
