@@ -1,17 +1,29 @@
-<?php
-
-// $_SERVER['REQUEST_URI'];
-
-$lien = $_GET['titre'];
+<?php 
+$param = explode('/',$_SERVER['REQUEST_URI']);
+$lien = $param[2];
+if(isset($param[3])){
+    $action = $param[3];
+}
 
 switch ($lien) {
-    case 'value':
-        # code...
+    case 'films':
+        require('controleurs/film_controleur.php');
+        break;
+
+    case 'date':
+        require('controleurs/date_controleur.php');
         break;
     
+    case 'genre':
+        require('controleurs/genre_controleur.php');
+        break;
+
+    case 'realisateur':
+        require('controleurs/realisateur_controleur.php');
+        break;
+
     default:
-        # code...
+    require('movies.php');
         break;
 }
 
-?>
