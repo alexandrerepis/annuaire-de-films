@@ -1,9 +1,5 @@
 <?php
 
-require_once 'vendor/autoload.php';
-$loader = new Twig_Loader_Filesystem('vues');
-$twig = new Twig_Environment($loader);
-$index = $twig->load('accueil.twig');
 
 function openBDD ($sql) {
 
