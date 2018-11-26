@@ -4,8 +4,8 @@ function openBDD ($sql) {
 
 
 $username = 'root';
-$password = '';
-$database ='films';
+$password = 'online@2017';
+$database ='DB_FILMS';
 $host = 'localhost';
 
     try{
