@@ -10,13 +10,13 @@ require_once("modeles/film_modeles.php");
 
    
     
-    // function filmList() {
-    //     global $twig;
-    //     $films = bdd_filmList();
-    //     // var_dump($films);
-    //     $template = $twig->load('film.twig');
-    //     echo $template->render(array('films' => $films));
-    // }
+    function filmList() {
+        global $twig;
+        $films = bdd_filmList();
+        // var_dump($films);
+        $template = $twig->load('film.twig');
+        echo $template->render(array('films' => $films));
+    }
 
     function filmDetail() {
         global $twig;
@@ -37,7 +37,7 @@ require_once("modeles/film_modeles.php");
     
 switch ($action) {
     case 'list':
-        // filmList();
+        filmList();
         break;
 
     case 'detail':
