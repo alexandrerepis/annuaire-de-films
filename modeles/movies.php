@@ -3,7 +3,7 @@
 
 $username = 'root';
 $password = 'online@2017';
-$database ='DB_FILMS';
+$database ='films';
 $host = 'localhost';
 
     try{
