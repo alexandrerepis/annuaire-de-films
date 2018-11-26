@@ -1,2 +1,5 @@
 <?php
-echo 'real';
+echo $twig->render('realisateur.twig', array ( '' => $, '' => $, '' => $,'' => $, ));
+
+
+?>
