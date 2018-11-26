@@ -1,4 +1,5 @@
 <?php 
+
 $param = explode('/',$_SERVER['REQUEST_URI']);
 $lien = $param[2];
 if(isset($param[3])){
