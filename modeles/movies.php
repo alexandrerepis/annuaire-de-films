@@ -1,11 +1,9 @@
 <?php
 
-function openBDD ($sql) {
-
 
 $username = 'root';
-$password = '';
-$database ='films';
+$password = 'online@2017';
+$database ='film_cinema';
 $host = 'localhost';
 
     try{
@@ -17,13 +15,7 @@ $host = 'localhost';
         die('Erreur : ' . $e->getMessage());
 
     }
-    
-    $response = $bdd->prepare( $sql );
-    // $response->bindParam(':num', $num, PDO::PARAM_INT)
-    $response->execute();
-    $list = $response->fetchAll(PDO::FETCH_ASSOC);
 
-}
 
 
    
