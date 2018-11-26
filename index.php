@@ -1,4 +1,10 @@
 <?php 
+
+require_once 'vendor/autoload.php';
+$loader = new Twig_Loader_Filesystem('vues');
+$twig = new Twig_Environment($loader);
+$index = $twig->load('accueil.twig');
+
 $param = explode('/',$_SERVER['REQUEST_URI']);
 $lien = $param[2];
 if(isset($param[3])){
