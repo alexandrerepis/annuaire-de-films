@@ -1,18 +1,38 @@
 {% extends 'accueil.twig' %}
 
+{% block titre %}
+<h2>Les meilleurs films</h2>
+{% endblock %}
+
 {% block content %}
+
+
+
+
+
+
+
 <div class="d-flex column">
 {% for film in films %}
     <a href={{"/annuaire-de-films/films/detail/"~film.id}}><img src="media/{{film.id}}.jpg" height="250px" width="300px"></a>
     {{ film.annee_de_sortie }} 
     {{ film.genre }}
+
 {% endfor %}
 
-{% for detail in details %}
+
+
+
+
+
+
     <img src="/media/background.jpg" height="290px" width="300px">{{ detail.titre }}
     {{ detail.annee_de_sortie }}
     {{ detail.realisateur }}
     {{ detail.description }}
+
 {% endfor %}
+
+
 
 {% endblock %}

@@ -1,3 +1,27 @@
-{# {% extends 'accueil.twig' %} #}
+
+        {% extends 'accueil.twig' %}
+        {% block titre %}
+
+        
+        <h2>Les meilleurs réalisateurs</h2>
+        {% endblock %}
+
 
 {% block content %}
+
+
+{% for realisateur in realisateurs %}
+
+    {{ realisateur.realisateur }}
+    {{ realisateur.filmographie }}
+  
+{% endfor %}
+
+{% for detail in details %}
+{{ detail.id }}
+{{ detail.realisateur }}
+    {{ detail.biographie }} 
+    {{ detail.filmographie }}
+{% endfor %}
+
+{% endblock %}
