@@ -12,13 +12,22 @@
 
 {% for genre in genres %}
 
+
 {{genre.genre}}
 
-{{genre.titre}}
+{{genre.films}}
 
-{{genre.annee}}
 
-{{genre.realisateur}}
+{% endfor %}
+
+{% for detail in details %}
+
+{{detail.id}}
+
+{{detail.genre}}
+
+{{detail.films}}
+
 
 {% endfor %}
 
