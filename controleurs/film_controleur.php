@@ -12,7 +12,7 @@ require_once("modeles/film_modeles.php");
     function filmList() {
         global $twig;
         $films = bdd_filmList();
-        // var_dump($films);
+        var_dump($films);
         $template = $twig->load('film.twig');
         echo $template->render(array('films' => $films));
     }

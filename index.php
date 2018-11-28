@@ -29,7 +29,7 @@ switch ($controller) {
         require_once('controleurs/realisateur_controleur.php');
         break;
 
-        case 'acteurs':
+    case 'acteurs':
         require_once('controleurs/acteur_controleur.php');
         break;
 
