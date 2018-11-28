@@ -1,42 +1,25 @@
-{# {% extends 'accueil.twig' %} #}
+{% extends 'accueil.twig' %}
+
+{% block titre %}
+
+
+<h2>Films par genre</h2>
+
+{% endblock %}
 
 {% block content %}
 
-          <a class="" href="index.php="></a>
-          <table class="table table-bordered">
-            <thead>
-              <tr>
-                <th>Genre</th>
-                <th>Titre</th>
-                <th>Année</th>
-                <th>Réalisateur</th>
-              </tr>
-            </thead>
-            <tbody> 
-              
-              {% for genre in genres %}
 
-              <tr>
-                <td>
-                  {{genre.nom}}
-                </td>
-                <td>
-                  {{genre.titre}}
-                </td>
-                <td>
-                  {{genre.date}}
-                </td>
-                <td>
-                  {{genre.realisateur}}
-                </td>
-                <td>
-               
-              </tr>
+{% for genre in genres %}
 
-              {% endfor %} 
-              
+{{genre.genre}}
 
-            </tbody>
-          </table>
+{{genre.titre}}
 
-{% endblock content %}
+{{genre.annee}}
+
+{{genre.realisateur}}
+
+{% endfor %}
+
+{% endblock %}

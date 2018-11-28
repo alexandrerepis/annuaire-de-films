@@ -8,7 +8,7 @@ $index = $twig->load('accueil.twig');
 
 
 $requete = explode("/", trim($_SERVER['REQUEST_URI'], "/"));
-$controller = (count($requete) === 1) ? "accueil" : $requete[1];
+$controller = (count($requete) === 1) ? "films" : $requete[1];
 $action = (count($requete) < 3)? "list" : $requete[2];
 $id = (count($requete) < 4) ? 0 : (int)$requete[3]; 
 
@@ -17,15 +17,15 @@ switch ($controller) {
         require_once('controleurs/film_controleur.php');
         break;
 
-    case 'date':
+    case 'dates':
         require_once('controleurs/date_controleur.php');
         break;
     
-    case 'genre':
+    case 'genres':
         require_once('controleurs/genre_controleur.php');
         break;
 
-    case 'realisateur':
+    case 'realisateurs':
         require_once('controleurs/realisateur_controleur.php');
         break;
 
