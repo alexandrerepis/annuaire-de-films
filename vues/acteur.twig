@@ -1,0 +1,20 @@
+{% extends 'accueil.twig' %}
+        {% block titre %}
+
+        
+        <h2>Les meilleurs acteurs</h2>
+        {% endblock %}
+
+
+{% block content %}
+
+
+{% for acteur in acteurs %}
+
+    {{ acteur.acteur }}
+    {{ acteur.filmographie }}
+  
+{% endfor %}
+
+
+{% endblock %}
