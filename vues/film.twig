@@ -1,15 +1,39 @@
 {% extends 'accueil.twig' %}
 
+{% block titre %}
+<h2>Les meilleurs films</h2>
+{% endblock %}
+
 {% block content %}
 
+
 {% for film in films %}
-    {{ film.titre }}
-    {{ film.annee_de_sortie }}
+
+{{ film.titre }}
+
+{{ film.annee_de_sortie }}
+
+{{ film.realisateur }}
+
+
 {% endfor %}
 
+
+
+
 {% for detail in details %}
-    {{ detail.titre }}
-    {{ detail.annee_de_sortie }}
+
+{{ detail.titre }}
+
+{{ detail.description }}
+
+{{ detail.realisateur }}
+
+{{ detail.annee_de_sortie }}
+
+
 {% endfor %}
+
+
 
 {% endblock %}
