@@ -34,18 +34,34 @@
 				</div>
 			</header>
 
+			<div class="container-fluid">
+					<div class="container">
+						<main class="main-content">
+							<div class="container">
+
+								{% block content %}
+
+								{% endblock %}
+
+
+						</main>
+					</div>
+			</div>
+
+
+    </header>
     
     {% block titre %}
 
     {% endblock %}
     <section>
-            {% block content %}
-
-            {% endblock %}
- 
+            
 					<div class="colophon">Copyright 2014 Company name, Designed by Themezy. All rights reserved</div>
 				</div> <!-- .container -->
 
+
+			<footer>
+				
 			</footer>
 		</div>
 
