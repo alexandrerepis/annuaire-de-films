@@ -15,11 +15,11 @@
                 height="100px" width="80px"></a>
         <div class="d-flex align-items-stretch pt-2">
 
-        </div>
-
-        {{ realisateur.realisateur }}
-    </div>
-</div>
+{% for realisateur in realisateurs %}
+    
+    {{ realisateur.realisateur }}
+    {{ realisateur.filmographie }}
+  
 {% endfor %}
 
 {% for detail in details %}
