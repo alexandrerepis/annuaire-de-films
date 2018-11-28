@@ -8,8 +8,7 @@ $twig = new Twig_Environment($loader, array(
 
 require_once("modeles/film_modeles.php");
 
-   
-    
+       
     function filmList() {
         global $twig;
         $films = bdd_filmList();
@@ -48,5 +47,3 @@ switch ($action) {
         filmList();
         break;
 }
-
-// ah
