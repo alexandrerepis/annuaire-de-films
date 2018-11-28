@@ -1,18 +1,24 @@
 {% extends 'accueil.twig' %}
 
 {% block content %}
-<div class="d-flex column">
-{% for film in films %}
-    <a href={{"/annuaire-de-films/films/detail/"~film.id}}><img src="media/{{film.id}}.jpg" height="250px" width="300px"></a>
-    {{ film.annee_de_sortie }} 
-    {{ film.genre }}
-{% endfor %}
 
-{% for detail in details %}
-    <img src="/media/background.jpg" height="290px" width="300px">{{ detail.titre }}
-    {{ detail.annee_de_sortie }}
-    {{ detail.realisateur }}
-    {{ detail.description }}
-{% endfor %}
+        <div class="d-flex flex-wrap justify-content-between">
+                {% for film in films %}
+                    <div class="d-flex flex-column pt-5 pb-5">
+                        <a href={{"/annuaire-de-films/films/detail/"~film.id}}><img src="media/{{film.id}}.jpg" height="250px" width="300px"></a>
+                        <div class="d-flex align-items-stretch pt-2">
+                            {{ film.annee_de_sortie }} 
+                            {{ film.Genre }}
+                        </div>
+                    </div>
+                {% endfor %}
+        </div>
+
+        {% for detail in details %}
+            <img src="../media/2/.jpg" height="290px" width="300px">{{ detail.titre }}
+            {{ detail.annee_de_sortie }}
+            {{ detail.realisateur }}
+            {{ detail.description }}
+        {% endfor %}
 
 {% endblock %}
