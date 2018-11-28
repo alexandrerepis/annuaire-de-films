@@ -23,6 +23,7 @@
             <img src="../media/2/.jpg" height="290px" width="300px">{{ detail.titre }}
             {{ detail.annee_de_sortie }}
             {{ detail.realisateur }}
+            <a href={{"/annuaire-de-films/"~realisateur.id}}></a>
             {{ detail.description }}
         {% endfor %}
 
