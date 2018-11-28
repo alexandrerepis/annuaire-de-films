@@ -7,7 +7,7 @@ function bdd_filmList() {
     global $bdd;
 
     $request = 'SELECT tbl_films.id, tbl_films.titre, tbl_films.description, tbl_films.annee_de_sortie,
-    GROUP_CONCAT(DISTINCT(`genre`) SEPARATOR ", ") AS Genre, GROUP_CONCAT(DISTINCT(`prenom_realisateur`) SEPARATOR ", ") AS Réal, tbl_realisateurs.nom_realisateur FROM tbl_films
+    GROUP_CONCAT(DISTINCT(`genre`) SEPARATOR ", ") AS Genre, CONCAT(GROUP_CONCAT(DISTINCT tbl_realisateurs.prenom_realisateur SEPARATOR ", "), " ", tbl_realisateurs.nom_realisateur) AS realisateur FROM tbl_films
     INNER JOIN tbl_genre_films ON tbl_films.id = tbl_genre_films.id_films
     INNER JOIN tbl_genre ON tbl_genre.id = tbl_genre_films.id_genres
     INNER JOIN tbl_realisateurs_films ON tbl_films.id = tbl_realisateurs_films.id_films
@@ -24,7 +24,7 @@ function bdd_filmList() {
 function bdd_filmDetail($id = 1) {
     global $bdd;
     $request = "SELECT tbl_films.id, tbl_films.titre, tbl_films.description, tbl_films.annee_de_sortie,
-    GROUP_CONCAT(DISTINCT(`genre`) SEPARATOR ', ') AS Genre, GROUP_CONCAT(DISTINCT(`prenom_realisateur`) SEPARATOR ', ') AS Réal, tbl_realisateurs.nom_realisateur FROM tbl_films
+    GROUP_CONCAT(DISTINCT(`genre`) SEPARATOR ', ') AS Genre, CONCAT(GROUP_CONCAT(DISTINCT tbl_realisateurs.prenom_realisateur SEPARATOR ', '), ' ', tbl_realisateurs.nom_realisateur) AS realisateur FROM tbl_films
     INNER JOIN tbl_genre_films ON tbl_films.id = tbl_genre_films.id_films
     INNER JOIN tbl_genre ON tbl_genre.id = tbl_genre_films.id_genres
     INNER JOIN tbl_realisateurs_films ON tbl_films.id = tbl_realisateurs_films.id_films
