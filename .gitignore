@@ -1,4 +1,8 @@
 composer.lock
 vendor/
+<<<<<<< HEAD
+modeles/movies.php
+=======
 modeles/movies.php
 
+>>>>>>> 5afc71aea91a4f7440980850864ffabe2846afb3
