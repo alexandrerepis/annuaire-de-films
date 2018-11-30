@@ -5,6 +5,7 @@ require_once 'movies.php';
 echo $controller;
 echo $action;
 echo $id;
+echo $tri;
 
 
 function bdd_filmList() {

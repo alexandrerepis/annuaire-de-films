@@ -18,12 +18,7 @@ require_once("modeles/film_modeles.php");
     }
 
     function filmDetail() {
-<<<<<<< HEAD
-        global $twig, $base_url;
-        global $id;
-=======
         global $twig, $id, $base_url;
->>>>>>> 5afc71aea91a4f7440980850864ffabe2846afb3
         $films = bdd_filmDetail();
         $template = $twig->load('film.twig');
         for ($i = 0; $i < 13; $i++) {
@@ -34,10 +29,7 @@ require_once("modeles/film_modeles.php");
             }
         }
         echo $template->render(array('details' => $details, "base_url" => $base_url));
-<<<<<<< HEAD
     }
-=======
->>>>>>> 5afc71aea91a4f7440980850864ffabe2846afb3
 
     function filmDateAsc() {
         global $twig, $base_url;
@@ -61,7 +53,7 @@ require_once("modeles/film_modeles.php");
             if ($id === $j) {
                 $genres = bdd_filmGenre($j);
             } elseif ($id < 1 || $id > 17) {
-                $genres = bdd_filmGenre(1);
+                $genres = bdd_filmList();
             }
         }
         // echo $genres !== "" ?: "Il n'y a pas de films de ce genre";
