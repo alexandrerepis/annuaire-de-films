@@ -1,7 +1,6 @@
 {% extends 'accueil.twig' %}
 
 
-
 {% block content %}
 
 <a href="/annuaire-de-films/films/list">Accueil</a></br>
@@ -28,17 +27,13 @@
 </select>
 </br>
 
-{% for film in films %}
-    {{ film.titre }}
-    {{ film.annee_de_sortie }}
-    </br>
-{% endfor %}
 
-{% for detail in details %}
-    {{ detail.titre }}
-    {{ detail.annee_de_sortie }}
-    </br>
-{% endfor %}
+    {% for genre in genres %}
+        
+            {{ genre.titre }}
+            {{ genre.annee_de_sortie }}
+            </br> 
+    {% endfor %}
 
 <div class="d-flex flex-wrap justify-content-between">
     {% for genre in genres %}
@@ -62,7 +57,6 @@
             {{ film.annee_de_sortie }}
             {{ film.Genre }}
         </div>
-    </div>
     {% endfor %}
 </div>
 
@@ -74,8 +68,6 @@
 <a href={{"/annuaire-de-films/acteurs/detail/"~acteur.id}}>{{ detail.acteur }}</a>
 {{ detail.description }}
 {% endfor %}
-
-
 
 
 

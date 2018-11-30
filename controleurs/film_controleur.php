@@ -1,5 +1,7 @@
 <?php
 
+$maxFilm = 12;
+
 require_once 'vendor/autoload.php';
 $loader = new Twig_Loader_Filesystem('vues');
 $twig = new Twig_Environment($loader, array(
@@ -13,22 +15,22 @@ require_once("modeles/film_modeles.php");
         global $twig, $base_url;
         $films = bdd_filmList();
         // var_dump($films);
-        $template = $twig->load('film.twig');
-        echo $template->render(array('films' => $films, "base_url" => $base_url));
+        // $template = $twig->load('film.twig');
+        echo $twig->render('film.twig', array('films' => $films, "base_url" => $base_url));
     }
 
     function filmDetail() {
-        global $twig, $id, $base_url;
+        global $twig, $id, $base_url, $maxFilm;
         $films = bdd_filmDetail();
-        $template = $twig->load('film.twig');
+        // $template = $twig->load('film.twig');
         for ($i = 0; $i < 13; $i++) {
             if ($id === $i) {
                 $details = bdd_filmDetail($i);
-            } elseif ($id < 1 || $id > 12) {
+            } elseif ($id < 1 || $id > $maxFilm) {
                 $details = bdd_filmDetail(1);
             }
         }
-        echo $template->render(array('details' => $details, "base_url" => $base_url));
+        echo $twig->render('film.twig', array('details' => $details, "base_url" => $base_url));
     }
 
     function filmDateAsc() {
