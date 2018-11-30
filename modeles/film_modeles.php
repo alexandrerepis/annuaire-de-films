@@ -33,9 +33,11 @@ function bdd_filmList() {
 function bdd_filmDetail($id = 1) {
     global $bdd;
     $request = "SELECT tbl_films.id as id, tbl_films.titre, tbl_films.description, tbl_films.annee_de_sortie, 
-    GROUP_CONCAT(DISTINCT tbl_acteurs.prenom_acteur,' ', tbl_acteurs.nom_acteur SEPARATOR ', ') AS acteur,
-    GROUP_CONCAT(DISTINCT(`genre`) SEPARATOR ', ') AS Genre, 
-    CONCAT(GROUP_CONCAT(DISTINCT tbl_realisateurs.prenom_realisateur SEPARATOR ', '), ' ', tbl_realisateurs.nom_realisateur) AS realisateur 
+    GROUP_CONCAT(DISTINCT tbl_acteurs.prenom_acteur,' ', tbl_acteurs.nom_acteur SEPARATOR ', ') AS acteur, 
+    GROUP_CONCAT(DISTINCT tbl_acteurs.id_acteur SEPARATOR ',') AS actid,
+    GROUP_CONCAT(DISTINCT(`genre`) SEPARATOR ', ') AS Genre, tbl_realisateurs.id_realisateur AS realid,
+    CONCAT(GROUP_CONCAT(DISTINCT tbl_realisateurs.prenom_realisateur SEPARATOR ', '), ' ', tbl_realisateurs.nom_realisateur) 
+    AS realisateur 
     FROM tbl_films
     INNER JOIN tbl_genre_films ON tbl_films.id = tbl_genre_films.id_films
     INNER JOIN tbl_genre ON tbl_genre.id = tbl_genre_films.id_genres

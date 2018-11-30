@@ -11,7 +11,7 @@ require_once("modeles/acteur_modeles.php");
    
     
     function actList() {
-        global $twig;
+        global $twig, $base_url;
         $acteurs = bdd_actList();
         // var_dump($realisateurs);
         $template = $twig->load('acteur.twig');
@@ -19,19 +19,17 @@ require_once("modeles/acteur_modeles.php");
     }
 
     function actDetail() {
-        global $twig;
-        global $id;
+        global  $twig, $id, $base_url;
         $acteurs = bdd_actDetail();
         
-        $template = $twig->load('acteur.twig');
-        for ($i = 0; $i < 45; $i++) {
-            if ($id === $i) {
-                $details = bdd_actDetail($i);
+       
+            if ($id != 0) {
+                $details = bdd_actDetail($id);
             } elseif ($id < 1 || $id > 44) {
                 $details = bdd_actDetail(1);
-            }
+            
         }
-        echo $template->render(array('details' => $details, "base_url" => $base_url));
+        echo $twig->render("acteur.twig",array('details' => $details, "base_url" => $base_url));
 
     }
     
