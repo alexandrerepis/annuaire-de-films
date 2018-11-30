@@ -18,16 +18,15 @@ require_once("modeles/film_modeles.php");
     }
 
     function filmDetail() {
-        global $twig, $id, $base_url, $i;
+        global $twig, $id, $base_url;
         $films = bdd_filmDetail();
-        // $template = $twig->load('film.twig');
-        // for ($i = 0; $i < 13; $i++) {
-            if ($id === $i) {
-                $details = bdd_filmDetail($i);
+       
+            if ($id !=0) {
+                $details = bdd_filmDetail($id);
             } elseif ($id < 1 || $id > 12) {
                 $details = bdd_filmDetail(1);
             }
-        // }
+        
         echo $twig->render('film.twig', array('details' => $details, "base_url" => $base_url));
     }
 
