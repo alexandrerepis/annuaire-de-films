@@ -1,25 +1,9 @@
 body {
-  background-image: url(media/background.jpg); }
-  body main {
-    background-color: white; }
-  body .main-navigation {
-    float: right;
-    background: white;
-    border-radius: 5px; }
-
-.main-navigation .menu-toggle, .main-navigation .menu, .main-navigation .search-form {
-  display: inline-block;
-  vertical-align: middle; }
-
-.main-navigation .menu-toggle {
-  color: #333;
-  border: none;
-  background: none;
-  font-size: 18px;
-  font-size: 1.2em;
-  padding: 8px 15px;
-  display: none;
-  outline: none; }
+  background-image: url(media/background.jpg);
+}
+body main {
+  background-color: white;
+}
 
 /*# sourceMappingURL=style.css.map */
 /*!

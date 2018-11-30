@@ -19,14 +19,15 @@ require_once("modeles/acteur_modeles.php");
     }
     
 switch ($action) {
+
     case 'list':
     actList();
-        break;
+    break;
 
     case 'detail':
-        actDetail();
-        break;
-    
+    actDetail();
+    break;
+   
     default:
         actlList();
         break;
