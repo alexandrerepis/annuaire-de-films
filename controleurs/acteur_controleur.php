@@ -1,4 +1,4 @@
-<<?php
+<?php
 require_once("modeles/acteur_modeles.php");
 
 function actList() {
