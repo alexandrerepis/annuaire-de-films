@@ -8,9 +8,11 @@
 
 
 $requete = explode("/", trim($_SERVER['REQUEST_URI'], "/"));
-$controller = (count($requete) === 1) ? "accueil" : $requete[1];
+$controller = (count($requete) === 1) ? "films" : $requete[1];
 $action = (count($requete) < 3)? "list" : $requete[2];
+// $genre = (count($requete) < 4)? "" : $requete[3];
 $id = (count($requete) < 4) ? 0 : (int)$requete[3]; 
+$tri = (count($requete) < 6) ? 0 : (int)$requete[5]; 
 
 switch ($controller) {
     case 'films':
@@ -21,9 +23,9 @@ switch ($controller) {
         require_once('controleurs/date_controleur.php');
         break;
     
-    case 'genre':
-        require_once('controleurs/genre_controleur.php');
-        break;
+    // case 'genre':
+    //     require_once('controleurs/genre_controleur.php');
+    //     break;
 
     case 'realisateur':
         require_once('controleurs/realisateur_controleur.php');
