@@ -25,13 +25,13 @@
   
 {% endfor %}
 
-{% for realdetail in realdetails %}
+{% for detail in realdetails %}
 
 
-<img src="/annuaire-de-films/media/photo-realisateur/{{realdetail.id}}.jpg">
-{{ realdetail.realisateur }}
-{{ realdetail.biographie }}
-{{ realdetail.filmographie }}
+<img src="/annuaire-de-films/media/photo-realisateur/{{detail.id}}.jpg">
+{{ detail.realisateur }}
+{{ detail.biographie }}
+{{ detail.filmographie }}
 {% endfor %}
 
 {% endblock %}
