@@ -35,11 +35,11 @@
             </br> 
     {% endfor %} #}
 
-<div class="d-flex flex-wrap justify-content-between">
+<div class="d-flex flex-wrap justify-content-around">
     {% for genre in genres %}
-    <div class="d-flex flex-column pt-5 pb-5">
-        <a href={{"/annuaire-de-films/films/detail/"~genre.id}}><img src="media/{{genre.id}}.jpg" height="300px" width="202px">{{genre.titre}}</a>
-        <div class="d-flex align-items-stretch pt-2">
+    <div class="d-flex flex-column text-center pt-5 pb-5">
+        <a class="d-flex flex-column" href={{"/annuaire-de-films/films/detail/"~genre.id}}><img src="media/{{genre.id}}.jpg" height="300px" width="202px">{{genre.titre}}</a>
+        <div class="d-flex align-items-stretch text-center pt-2">
             {{ genre.annee_de_sortie }}
             {{ genre.genre }}
         </div>

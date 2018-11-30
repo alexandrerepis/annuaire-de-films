@@ -22,7 +22,7 @@ function bdd_filmList() {
     INNER JOIN tbl_genre ON tbl_genre.id = tbl_genre_films.id_genres
     INNER JOIN tbl_realisateurs_films ON tbl_films.id = tbl_realisateurs_films.id_films
     INNER JOIN tbl_realisateurs ON tbl_realisateurs_films.id_realisateurs = tbl_realisateurs.id_realisateur
-    GROUP BY titre ORDER BY tbl_films.id";
+    GROUP BY titre ORDER BY tbl_films.annee_de_sortie DESC";
 
     $response = $bdd->prepare($request);
     // $response->bindParam(':num', $num, PDO::PARAM_INT)
