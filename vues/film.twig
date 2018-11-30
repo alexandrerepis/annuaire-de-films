@@ -66,13 +66,6 @@
 
 {% for detail in details %}
 
-<img src="/annuaire-de-films/media/{{detail.id}}.jpg" height="300px" width="202px">
-{{ detail.titre }}
-{{ detail.annee_de_sortie }}
-<a href={{"/annuaire-de-films/realisateurs/detail/"~realisateur.id}}>{{ detail.realisateur }}</a>
-<a href={{"/annuaire-de-films/acteurs/detail/"~acteur.id}}>{{ detail.acteur }}</a>
-{{ detail.description }}
-
     <img src="/annuaire-de-films/media/{{detail.id}}.jpg" height="300px" width="202px">
     {{ detail.titre }}
     {{ detail.annee_de_sortie }}
