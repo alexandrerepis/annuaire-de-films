@@ -1,8 +1,7 @@
 {% extends 'accueil.twig' %}
 {% block titre %}
 
-
-<<<<<<< HEAD
+{% endblock %}
 
 {% block content %}
 
@@ -30,59 +29,41 @@
 </select>
 </br>
 
-{% for film in films %}
-    {{ film.titre }}
-    {{ film.annee_de_sortie }}
-    </br>
-{% endfor %}
 
-{% for detail in details %}
-    {{ detail.titre }}
-    {{ detail.annee_de_sortie }}
-    </br>
-{% endfor %}
-
-{% for genre in genres %}
-    {# {% if genre.titre != undefined %} #}
-    
-    {{ genre.titre }}
-    {{ genre.annee_de_sortie }}
-    </br>
-
-    {# {% else %}
-    {{"Il n'y as pas de films de ce genre"}}
-    {% endif %} #}
+     {% for genre in genres %}
+        {% if genre.titre != undefined %} 
         
-=======
-<h2>Les meilleurs films</h2>
-{% endblock %}
-{% block content %}
+            {{ genre.titre }}
+            {{ genre.annee_de_sortie }}
+            </br> 
+
+            {% else %}
+                {{"Il n'y as pas de films de ce genre"}}
+        {% endif %} 
+    {% endfor %}  
+
 
 
 <div class="d-flex flex-wrap justify-content-between">
     {% for film in films %}
-    <div class="d-flex flex-column pt-5 pb-5">
-        <a href={{"/annuaire-de-films/films/detail/"~film.id}}><img src="media/{{film.id}}.jpg" height="300px" width="202px"></a>
-        <div class="d-flex align-items-stretch pt-2">
-            {{ film.annee_de_sortie }}
-            {{ film.Genre }}
+        <div class="d-flex flex-column pt-5 pb-5">
+            <a href={{"/annuaire-de-films/films/detail/"~film.id}}><img src="media/{{film.id}}.jpg" height="300px" width="202px"></a>
+            <div class="d-flex align-items-stretch pt-2">
+                {{ film.annee_de_sortie }}
+                {{ film.Genre }}
+            </div>
         </div>
-    </div>
     {% endfor %}
 </div>
 
 {% for detail in details %}
-<img src="/annuaire-de-films/media/{{detail.id}}.jpg" height="300px" width="202px">
-{{ detail.titre }}
-{{ detail.annee_de_sortie }}
-<a href={{"/annuaire-de-films/realisateurs/detail/"~realisateur.id}}>{{ detail.realisateur }}</a>
-<a href={{"/annuaire-de-films/acteurs/detail/"~acteur.id}}>{{ detail.acteur }}</a>
-{{ detail.description }}
->>>>>>> 5afc71aea91a4f7440980850864ffabe2846afb3
+    <img src="/annuaire-de-films/media/{{detail.id}}.jpg" height="300px" width="202px">
+    {{ detail.titre }}
+    {{ detail.annee_de_sortie }}
+    <a href={{"/annuaire-de-films/realisateurs/detail/"~realisateur.id}}>{{ detail.realisateur }}</a>
+    <a href={{"/annuaire-de-films/acteurs/detail/"~acteur.id}}>{{ detail.acteur }}</a>
+    {{ detail.description }}
 {% endfor %}
-
-
-
 
 
 

@@ -2,9 +2,9 @@
 
 require_once 'movies.php';
 
-echo $controller;
-echo $action;
-echo $id;
+// echo $controller;
+// echo $action;
+// echo $id;
 
 
 function bdd_filmList() {

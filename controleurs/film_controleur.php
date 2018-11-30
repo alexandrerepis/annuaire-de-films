@@ -13,31 +13,23 @@ require_once("modeles/film_modeles.php");
         global $twig, $base_url;
         $films = bdd_filmList();
         // var_dump($films);
-        $template = $twig->load('film.twig');
-        echo $template->render(array('films' => $films, "base_url" => $base_url));
+        // $template = $twig->load('film.twig');
+        echo $twig->render('film.twig', array('films' => $films, "base_url" => $base_url));
     }
 
     function filmDetail() {
-<<<<<<< HEAD
-        global $twig, $base_url;
-        global $id;
-=======
-        global $twig, $id, $base_url;
->>>>>>> 5afc71aea91a4f7440980850864ffabe2846afb3
+        global $twig, $id, $base_url, $i;
         $films = bdd_filmDetail();
-        $template = $twig->load('film.twig');
-        for ($i = 0; $i < 13; $i++) {
+        // $template = $twig->load('film.twig');
+        // for ($i = 0; $i < 13; $i++) {
             if ($id === $i) {
                 $details = bdd_filmDetail($i);
             } elseif ($id < 1 || $id > 12) {
                 $details = bdd_filmDetail(1);
             }
-        }
-        echo $template->render(array('details' => $details, "base_url" => $base_url));
-<<<<<<< HEAD
+        // }
+        echo $twig->render('film.twig', array('details' => $details, "base_url" => $base_url));
     }
-=======
->>>>>>> 5afc71aea91a4f7440980850864ffabe2846afb3
 
     function filmDateAsc() {
         global $twig, $base_url;
