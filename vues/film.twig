@@ -2,10 +2,10 @@
 
 {% block content %}
 
-        <div class="d-flex flex-wrap justify-content-between">
+        <div class="d-flex flex-wrap">
                 {% for film in films %}
-                    <div class="d-flex flex-column pt-5 pb-5">
-                        <a href={{"/annuaire-de-films/films/detail/"~film.id}}><img src="media/{{film.id}}.jpg" height="250px" width="300px"></a>
+                    <div class="d-flex flex-column p-5">
+                        <a href={{"/annuaire-de-films/films/detail/"~film.id}}><img src="media/{{film.id}}.jpg" height="300px" width="202px"></a>
                         <div class="d-flex align-items-stretch pt-2">
                             {{ film.annee_de_sortie }} 
                             {{ film.Genre }}
@@ -15,7 +15,7 @@
         </div>
 
         {% for detail in details %}
-            <img src="../media/2/.jpg" height="290px" width="300px">{{ detail.titre }}
+            <img src="media/{{detail.id}}.jpg">{{ detail.titre }}
             {{ detail.annee_de_sortie }}
             {{ detail.realisateur }}
             {{ detail.description }}

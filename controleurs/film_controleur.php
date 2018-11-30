@@ -10,16 +10,15 @@ require_once("modeles/film_modeles.php");
 
        
     function filmList() {
-        global $twig;
+        global $twig,$base_url;
         $films = bdd_filmList();
         // var_dump($films);
         $template = $twig->load('film.twig');
-        echo $template->render(array('films' => $films));
+        echo $template->render(array('films' => $films,"base_url"=>$base_url));
     }
 
     function filmDetail() {
-        global $twig;
-        global $id;
+        global $twig,$base_url,$id;
         $films = bdd_filmDetail();
         // var_dump($films);
         $template = $twig->load('film.twig');
@@ -30,7 +29,7 @@ require_once("modeles/film_modeles.php");
                 $details = bdd_filmDetail(1);
             }
         }
-        echo $template->render(array('details' => $details));
+        echo $template->render(array('details' => $details,"base_url"=>$base_url));
 
     }
     
