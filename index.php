@@ -1,9 +1,9 @@
 <?php 
 
-    require_once 'vendor/autoload.php';
-    $loader = new Twig_Loader_Filesystem('vues');
-    $twig = new Twig_Environment($loader);
-    $index = $twig->load('accueil.twig');
+require_once 'vendor/autoload.php';
+$loader = new Twig_Loader_Filesystem('vues');
+$twig = new Twig_Environment($loader);
+$index = $twig->load('accueil.twig');
 
 
 
@@ -19,16 +19,26 @@ switch ($controller) {
         require_once('controleurs/film_controleur.php');
         break;
 
-    case 'date':
+    case 'dates':
         require_once('controleurs/date_controleur.php');
         break;
     
+<<<<<<< HEAD
     // case 'genre':
     //     require_once('controleurs/genre_controleur.php');
     //     break;
+=======
+    case 'genres':
+        require_once('controleurs/genre_controleur.php');
+        break;
+>>>>>>> 5afc71aea91a4f7440980850864ffabe2846afb3
 
-    case 'realisateur':
+    case 'realisateurs':
         require_once('controleurs/realisateur_controleur.php');
+        break;
+
+    case 'acteurs':
+        require_once('controleurs/acteur_controleur.php');
         break;
 
     default:

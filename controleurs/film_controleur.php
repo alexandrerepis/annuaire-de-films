@@ -8,8 +8,7 @@ $twig = new Twig_Environment($loader, array(
 
 require_once("modeles/film_modeles.php");
 
-   
-    
+       
     function filmList() {
         global $twig, $base_url;
         $films = bdd_filmList();
@@ -19,8 +18,12 @@ require_once("modeles/film_modeles.php");
     }
 
     function filmDetail() {
+<<<<<<< HEAD
         global $twig, $base_url;
         global $id;
+=======
+        global $twig, $id, $base_url;
+>>>>>>> 5afc71aea91a4f7440980850864ffabe2846afb3
         $films = bdd_filmDetail();
         $template = $twig->load('film.twig');
         for ($i = 0; $i < 13; $i++) {
@@ -31,7 +34,10 @@ require_once("modeles/film_modeles.php");
             }
         }
         echo $template->render(array('details' => $details, "base_url" => $base_url));
+<<<<<<< HEAD
     }
+=======
+>>>>>>> 5afc71aea91a4f7440980850864ffabe2846afb3
 
     function filmDateAsc() {
         global $twig, $base_url;
