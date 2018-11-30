@@ -15,7 +15,7 @@ require_once("modeles/realisateur_modeles.php");
         $realisateurs = bdd_realList();
         // var_dump($realisateurs);
         $template = $twig->load('realisateur.twig');
-        echo $template->render(array('realisateurs' => $realisateurs));
+        echo $template->render(array('realisateurs' => $realisateurs, "base_url" => $base_url));
     }
 
     function realDetail() {
@@ -31,7 +31,7 @@ require_once("modeles/realisateur_modeles.php");
                 $details = bdd_realDetail(1);
             }
         }
-        echo $template->render(array('details' => $details));
+        echo $template->render(array('details' => $details, "base_url" => $base_url));
 
     }
     

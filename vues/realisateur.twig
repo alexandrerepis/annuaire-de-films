@@ -1,14 +1,19 @@
+{% extends 'accueil.twig' %}
+{% block titre %}
 
-        {% extends 'accueil.twig' %}
-        {% block titre %}
 
-        
-        <h2>Les meilleurs réalisateurs</h2>
-        {% endblock %}
+<h2>Les meilleurs réalisateurs</h2>
+{% endblock %}
 
 
 {% block content %}
 
+<div class="d-flex flex-wrap justify-content-between">
+    {% for realisateur in realisateurs %}
+    <div class="d-flex flex-column pt-5 pb-5">
+        <a href={{"/annuaire-de-films/realisateurs/detail/"~realisateur.id}}><img src="media/realisateur/{{realisateur.id}}.jpg"
+                height="100px" width="80px"></a>
+        <div class="d-flex align-items-stretch pt-2">
 
 {% for realisateur in realisateurs %}
     
@@ -18,10 +23,11 @@
 {% endfor %}
 
 {% for detail in details %}
-{{ detail.id }}
+<img src="../media/{{detail.id}}.jpg" height="300px" width="202px">
+
 {{ detail.realisateur }}
-    {{ detail.biographie }} 
-    {{ detail.filmographie }}
+{{ detail.biographie }}
+{{ detail.filmographie }}
 {% endfor %}
 
 {% endblock %}

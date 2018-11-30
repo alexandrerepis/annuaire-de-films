@@ -29,6 +29,10 @@ switch ($controller) {
         require_once('controleurs/realisateur_controleur.php');
         break;
 
+    case 'acteurs':
+        require_once('controleurs/acteur_controleur.php');
+        break;
+
     default:
         require_once('controleurs/film_controleur.php');
         break;

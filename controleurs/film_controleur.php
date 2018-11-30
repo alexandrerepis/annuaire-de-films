@@ -14,7 +14,7 @@ require_once("modeles/film_modeles.php");
         $films = bdd_filmList();
         // var_dump($films);
         $template = $twig->load('film.twig');
-        echo $template->render(array('films' => $films, "base_url"=>$base_url));
+        echo $template->render(array('films' => $films, "base_url" => $base_url));
     }
 
     function filmDetail() {
