@@ -11,7 +11,7 @@ $requete = explode("/", trim($_SERVER['REQUEST_URI'], "/"));
 $controller = (count($requete) === 1) ? "films" : $requete[1];
 $action = (count($requete) < 3)? "list" : $requete[2];
 $id = (count($requete) < 4) ? 0 : (int)$requete[3]; 
-$tri = (count($requete) < 6) ? 0 : (int)$requete[5]; 
+$tri = (count($requete) < 5) ? 0 : (int)$requete[4]; 
 
 switch ($controller) {
     case 'films':
