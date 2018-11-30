@@ -1,4 +1,5 @@
+.sass-cache/
 composer.lock
 vendor/
 modeles/movies.php
-.sass-cache/
+

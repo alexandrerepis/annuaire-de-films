@@ -1,6 +1,6 @@
 <?php
 
-$base_url = (strstr($_SERVER["HTTP_HOST"],"8080") === false)?"http://localhost/annuaire-de-films/":"http://localhost:8080/annuaire-de-films/";
+$base_url = (strstr($_SERVER["HTTP_HOST"],"8080")=== false)?"http://localhost/annuaire-de-films/":"http://localhost:8080/annuaire-de-films/";
 
 $username = 'root';
 $password = 'online@2017';
@@ -16,7 +16,3 @@ $host = 'localhost';
         die('Erreur : ' . $e->getMessage());
 
     }
-
-
-
-   
