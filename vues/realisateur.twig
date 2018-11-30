@@ -11,10 +11,13 @@
 <div class="d-flex flex-wrap justify-content-between">
     {% for realisateur in realisateurs %}
     <div class="d-flex flex-column pt-5 pb-5">
-        <a href={{"/annuaire-de-films/realisateurs/detail/"~realisateur.id}}><img src="media/realisateur/{{realisateur.id}}.jpg"
+        <a href={{"/annuaire-de-films/realisateurs/detail/"~realisateur.id}}><img src="/annuaire-de-films/media/photo-realisateur/{{realisateur.id}}.jpg"
                 height="100px" width="80px"></a>
         <div class="d-flex align-items-stretch pt-2">
-
+        </div>
+    </div>
+    {% endfor %}
+</div>
 {% for realisateur in realisateurs %}
     
     {{ realisateur.realisateur }}
@@ -22,12 +25,13 @@
   
 {% endfor %}
 
-{% for detail in details %}
-<img src="../media/{{detail.id}}.jpg" height="300px" width="202px">
+{% for realdetail in realdetails %}
 
-{{ detail.realisateur }}
-{{ detail.biographie }}
-{{ detail.filmographie }}
+
+<img src="/annuaire-de-films/media/photo-realisateur/{{realdetail.id}}.jpg">
+{{ realdetail.realisateur }}
+{{ realdetail.biographie }}
+{{ realdetail.filmographie }}
 {% endfor %}
 
 {% endblock %}

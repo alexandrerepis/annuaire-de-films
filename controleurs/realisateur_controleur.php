@@ -11,7 +11,7 @@ require_once("modeles/realisateur_modeles.php");
    
     
     function realList() {
-        global $twig;
+        global $twig, $base_url;
         $realisateurs = bdd_realList();
         // var_dump($realisateurs);
         $template = $twig->load('realisateur.twig');
@@ -19,19 +19,20 @@ require_once("modeles/realisateur_modeles.php");
     }
 
     function realDetail() {
-        global $twig;
-        global $id;
-        $realisateurs = bdd_realDetail();
+        global  $twig, $id, $base_url;
+        $realdetailss = bdd_realDetail();
         
         $template = $twig->load('realisateur.twig');
         for ($i = 0; $i < 10; $i++) {
             if ($id === $i) {
-                $details = bdd_realDetail($i);
+                $realdetails = bdd_realDetail($i);
             } elseif ($id < 1 || $id > 9) {
-                $details = bdd_realDetail(1);
+                $realdetails = bdd_realDetail(1);
+              
+              
             }
         }
-        echo $template->render(array('details' => $details, "base_url" => $base_url));
+        echo $template->render(array('realdetails' => $realdetails, "base_url" => $base_url));
 
     }
     
