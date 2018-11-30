@@ -8,16 +8,23 @@
 
 {% block content %}
 
-
+<div class="d-flex flex-wrap justify-content-between"></div>
 {% for acteur in acteurs %}
-<a href={{"/annuaire-de-films/acteurs/detail/"~acteur.id}}>{{ acteur.acteur }}</a>
-
+<div class="d-flex flex-column pt-5 pb-5"></div>
+<a href={{"/annuaire-de-films/acteurs/detail/"~acteur.id}}>{{ acteur.acteur }}<img src="/annuaire-de-films/media/photo-acteur/{{acteur.id}}.jpg"
+    height="100px" width="80px"></a>
 {{ acteur.filmographie }}
 
+<div class="d-flex align-items-stretch pt-2">
+</div>
+</div>
 {% endfor %}
 
+</div>
+
 {% for detail in details %}
-{{ detail.id }}
+<img src="/annuaire-de-films/media/photo-acteur/{{detail.id}}.jpg">
+
 {{ detail.acteur }}
 {{ detail.biographie }}
 {{ detail.filmographie }}

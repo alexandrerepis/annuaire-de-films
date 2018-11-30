@@ -20,7 +20,7 @@
 </div>
 
 {% for detail in details %}
-<img src="media/{{detail.id}}.jpg" height="300px" width="202px">
+<img src="/annuaire-de-films/media/{{detail.id}}.jpg" height="300px" width="202px">
 {{ detail.titre }}
 {{ detail.annee_de_sortie }}
 <a href={{"/annuaire-de-films/realisateurs/detail/"~realisateur.id}}>{{ detail.realisateur }}</a>
