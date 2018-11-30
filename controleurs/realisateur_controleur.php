@@ -20,7 +20,7 @@ require_once("modeles/realisateur_modeles.php");
 
     function realDetail() {
         global  $twig, $id, $base_url;
-        $details = bdd_realDetail();
+        $realisateurs = bdd_realDetail();
         
         $template = $twig->load('realisateur.twig');
         for ($i = 0; $i < 10; $i++) {
@@ -32,7 +32,7 @@ require_once("modeles/realisateur_modeles.php");
               
             }
         }
-        echo $template->render(array('realdetails' => $details, "base_url" => $base_url));
+        echo $template->render(array('details' => $details, "base_url" => $base_url));
 
     }
     

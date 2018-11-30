@@ -21,7 +21,7 @@ require_once("modeles/acteur_modeles.php");
     function actDetail() {
         global $twig;
         global $id;
-        $details = bdd_actDetail();
+        $acteurs = bdd_actDetail();
         
         $template = $twig->load('acteur.twig');
         for ($i = 0; $i < 45; $i++) {
