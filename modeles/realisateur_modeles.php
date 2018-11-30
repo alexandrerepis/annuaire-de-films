@@ -25,8 +25,8 @@ return $response->fetchAll(PDO::FETCH_ASSOC);
 function bdd_realDetail($id = 1) {
     global $bdd;
 
-$request = "SELECT tbl_realisateurs.id_realisateur AS id, CONCAT(GROUP_CONCAT(DISTINCT tbl_realisateurs.prenom_realisateur SEPARATOR ', '), ' ', tbl_realisateurs.nom_realisateur) 
-AS realisateur, tbl_realisateurs.bio_realisateur AS biographie,
+$request = "SELECT tbl_films.id AS filmid, tbl_realisateurs.id_realisateur AS id, CONCAT(GROUP_CONCAT(DISTINCT tbl_realisateurs.prenom_realisateur SEPARATOR ', '), ' ', tbl_realisateurs.nom_realisateur) 
+AS realisateur, tbl_realisateurs.bio_realisateur AS biographie, tbl_films.id AS filmid,
 GROUP_CONCAT(DISTINCT CONCAT( tbl_films.titre , ' ', tbl_films.annee_de_sortie)SEPARATOR ', ') 
 AS filmographie FROM tbl_films
 INNER JOIN tbl_genre_films ON tbl_films.id = tbl_genre_films.id_films

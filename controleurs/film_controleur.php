@@ -1,12 +1,9 @@
 <?php
 
+
 $maxFilm = 12;
 
-require_once 'vendor/autoload.php';
-$loader = new Twig_Loader_Filesystem('vues');
-$twig = new Twig_Environment($loader, array(
-    'cache' => false,
-));
+
 
 require_once("modeles/film_modeles.php");
 

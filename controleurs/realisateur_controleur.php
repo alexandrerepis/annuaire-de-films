@@ -13,18 +13,18 @@ require_once("modeles/realisateur_modeles.php");
 
     function realDetail() {
         global  $twig, $id, $base_url;
-        $realdetailss = bdd_realDetail();
+        $details = bdd_realDetail();
         
         $template = $twig->load('realisateur.twig');
         
             if ($id !=0) {
-                $realdetails = bdd_realDetail($id);
+                $details = bdd_realDetail($id);
             } elseif ($id < 1 || $id > 9) {
-                $realdetails = bdd_realDetail(1);
+                $details = bdd_realDetail(1);
               
               
             }
-        echo $twig->render('realisateur.twig',array('realdetails' => $realdetails, "base_url" => $base_url));
+        echo $twig->render('realisateur.twig',array('details' => $details, "base_url" => $base_url));
 
     }
     
