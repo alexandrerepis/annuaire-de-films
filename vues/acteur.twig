@@ -26,8 +26,12 @@
 <img src="/annuaire-de-films/media/photo-acteur/{{detail.id}}.jpg">
 
 {{ detail.acteur }}
-{{ detail.biographie }}
-{{ detail.filmographie }}
+Biographie : {{ detail.biographie }}
+Filmographie : 
+{% set filmids = detail.filmid|split(',') %}
+{% set filmographie = detail.filmographie|split(',') %}
+{% for filmid in filmids %}
+<a href="/annuaire-de-films/films/detail/{{filmid}}">{{ filmographie[loop.index0]~""}}</a>
 {% endfor %}
-
+{% endfor %}
 {% endblock %}

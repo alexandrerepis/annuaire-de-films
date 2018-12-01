@@ -19,19 +19,24 @@
     {% endfor %}
 </div>
 {% for realisateur in realisateurs %}
-    
-    {{ realisateur.realisateur }}
-    {{ realisateur.filmographie }}
-  
+
+{{ realisateur.realisateur }}
+{{ realisateur.filmographie }}
+
 {% endfor %}
 
 {% for detail in details %}
 
 
-<img src="/annuaire-de-films/media/photo-realisateur/{{detail.id}}.jpg"  height="300px" width="202px">
+<img src="/annuaire-de-films/media/photo-realisateur/{{detail.id}}.jpg" height="300px" width="202px">
 {{ detail.realisateur }}
-{{ detail.biographie }}
-<a href="/annuaire-de-films/detail/films/"~{{detail.filmid}}>{{ detail.filmographie }}</a>
+Biographie : {{ detail.biographie }}
+Filmographie :
+{% set filmids = detail.filmid|split(',') %}
+{% set filmographie = detail.filmographie|split(',') %}
+{% for filmid in filmids %}
+<a href="/annuaire-de-films/films/detail/{{filmid}}">{{ filmographie[loop.index0]~""}}</a>
+{% endfor %}
 
 {% endfor %}
 
