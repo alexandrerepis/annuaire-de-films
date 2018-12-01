@@ -1,9 +1,6 @@
 {% extends 'accueil.twig' %}
 
-
 {% block content %}
-
-<a href="/annuaire-de-films/films/list">Accueil</a></br>
 
 <select id="genre" onchange="location = this.value;">
     <option value="">--Choisissez un genre--</option>
@@ -48,6 +45,7 @@
 </div>
         
 
+<<<<<<< HEAD
 <div class="d-flex flex-wrap justify-content-between">
     {% for film in films %}
     <div class="d-flex flex-column pt-5 pb-5">
@@ -55,6 +53,23 @@
         <div class="d-flex align-items-stretch pt-2">
             {{ film.annee_de_sortie }}
             {{ film.genre }}
+=======
+
+<div class="d-flex flex-wrap justify-content-center">
+    {% for film in films %}
+        <div class="d-flex flex-wrap flex-column pt-5 pb-5 pr-0 pr-sm-0 pr-md-5">
+            <a href={{"/annuaire-de-films/films/detail/"~film.id}}><img src="media/{{film.id}}.jpg" height="300px" width="202px"></a>
+            {# <div class="d-flex align-items-stretch pt-2"> #}
+                <div>
+                {{ film.titre }}
+                </div>
+                <div>
+                {{ film.annee_de_sortie }}
+                </div>
+                <div>
+                {{ film.Genre }}
+                </div>
+>>>>>>> fae4e72957bad24cb0d8a4a6e8852676a371bce0
         </div>
     </div>
     {% endfor %}

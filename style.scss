@@ -4,8 +4,29 @@ body{
     background-size: cover;
     main{
     background-color: white;
+    
+}
+.main-navigation {
+        float: right;
+        background: white;
+        border-radius: 5px; }
     }
+<<<<<<< HEAD
 }
 
 
     
+=======
+    .main-navigation .menu-toggle, .main-navigation .menu, .main-navigation .search-form {
+        display: inline-block;
+        vertical-align: middle; }
+      .main-navigation .menu-toggle {
+        color: #333;
+        border: none;
+        background: none;
+        font-size: 18px;
+        font-size: 1.2em;
+        padding: 8px 15px;
+        display: none;
+        outline: none; }
+>>>>>>> fae4e72957bad24cb0d8a4a6e8852676a371bce0
