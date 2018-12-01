@@ -1,9 +1,5 @@
 <?php
-
-
 $maxFilm = 12;
-
-
 
 require_once("modeles/film_modeles.php");
 
@@ -17,13 +13,11 @@ require_once("modeles/film_modeles.php");
     function filmDetail() {
         global $twig, $id, $base_url;
         $films = bdd_filmDetail();
-       
-            if ($id !=0) {
+                   if ($id !=0) {
                 $details = bdd_filmDetail($id);
             } elseif ($id < 1 || $id > 12) {
                 $details = bdd_filmDetail(1);
             }
-        
         echo $twig->render('film.twig', array('details' => $details, "base_url" => $base_url));
     }
 
