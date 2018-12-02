@@ -3,8 +3,8 @@
 -- https://www.phpmyadmin.net/
 --
 -- Client :  localhost:3306
--- Généré le :  Lun 26 Novembre 2018 à 11:51
--- Version du serveur :  10.3.11-MariaDB-1:10.3.11+maria~bionic-log
+-- Généré le :  Sam 01 Décembre 2018 à 18:29
+-- Version du serveur :  10.3.11-MariaDB-1:10.3.11+maria~bionic
 -- Version de PHP :  7.2.10-0ubuntu0.18.04.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -27,60 +27,61 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `tbl_acteurs` (
-  `id_acteur` int(4) NOT NULL,
-  `nom_acteur` varchar(255) NOT NULL,
-  `prenom_acteur` varchar(255) NOT NULL
+  `nom_acteur` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `prenom_acteur` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `bio_acteur` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `id_acteur` int(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Contenu de la table `tbl_acteurs`
 --
 
-INSERT INTO `tbl_acteurs` (`id_acteur`, `nom_acteur`, `prenom_acteur`) VALUES
-(1, 'Worthington', 'Sam'),
-(2, 'Saldana', 'Zoe'),
-(3, 'Weaver', 'Sigourney'),
-(4, 'Lang', 'Stephen'),
-(5, 'Dicaprio', 'Leonardo'),
-(6, 'Winslet', 'Kate'),
-(7, 'Zane', 'Billy'),
-(8, 'Bates', 'Kahty'),
-(9, 'Boseman', 'Chadwick'),
-(10, 'B.Jordan', 'Michael'),
-(11, 'Nyong\'o', 'Lupita'),
-(12, 'Gurira', 'Danai'),
-(13, 'Hanks', 'Tom'),
-(14, 'Clarke duncan', 'Michael'),
-(15, 'Morse', 'David'),
-(16, 'Hunt', 'Bonnie'),
-(17, 'McConaughey', 'Matthew'),
-(18, 'Hathaway', 'Anne'),
-(19, 'Caine', 'Michael'),
-(20, 'Lithgow', 'John'),
-(21, 'Skerritt', 'Tom'),
-(22, 'Cartwright', 'Veronica'),
-(23, 'Dean stanton', 'Harry'),
-(24, 'Robbins', 'Tim'),
-(25, 'Freeman', 'Morgan'),
-(26, 'Gunton', 'Bob'),
-(27, 'Sadler', 'William'),
-(28, 'Sinise', 'Gary'),
-(29, 'Wright', 'Robin'),
-(30, 'Williamson', 'Mykelti'),
-(31, 'Walken', 'Christopher'),
-(32, 'Sheen', 'Marin'),
-(33, 'Downey Jr.', 'Robert'),
-(34, 'Hemsworth', 'Chris'),
-(35, 'Ruffalo', 'Mark'),
-(36, 'Evans', 'Chris'),
-(37, 'Crowe', 'Russel'),
-(38, 'Phoenix', 'Joaquin'),
-(39, 'Nielsen', 'Connie'),
-(40, 'Reed', 'Olivier'),
-(41, 'Neeson', 'Liam'),
-(42, 'Kingsley', 'Ben'),
-(43, 'Fiennes', 'Ralph'),
-(44, 'Goodall', 'Caroline');
+INSERT INTO `tbl_acteurs` (`nom_acteur`, `prenom_acteur`, `bio_acteur`, `id_acteur`) VALUES
+('Worthington', 'Sam', 'Sam Worthington est un acteur, réalisateur et scénariste australien, né le 2 août 1976 à Godalming dans le Surrey (Angleterre). ', 1),
+('Saldana', 'Zoe', 'Zoe Saldana Perego1, née le 19 juin 1978 à Passaic (New Jersey), est une actrice, réalisatrice et productrice américano-dominicaine. ', 2),
+('Weaver', 'Sigourney', 'Sigourney Weaver, née Susan Alexandra Weaver le 8 octobre 1949, à New York, est une actrice américaine. ', 3),
+('Lang', 'Stephen', 'Stephen Lang est un acteur américain né le 11 juillet 1952 à New York, (États-Unis). ', 4),
+('Dicaprio', 'Leonardo', 'Leonardo DiCaprio, né le 11 novembre 1974 à Los Angeles, est un acteur, scénariste et producteur de cinéma américain. ', 5),
+('Winslet', 'Kate', 'Kate Winslet est une actrice britannique, née le 5 octobre 1975 à Reading (Angleterre).', 6),
+('Zane', 'Billy', 'Billy Zane est un acteur, producteur et réalisateur américain né le 24 février 1966 à Chicago. ', 7),
+('Bates', 'Kathy', 'Kathy Bates est une actrice, réalisatrice et productrice américaine née le 28 juin 1948 à Memphis (Tennessee).', 8),
+('Boseman', 'Chadwick', 'Chadwick Boseman est un acteur américain né le 29 novembre 1977 à Anderson (Caroline du Sud). ', 9),
+('B.Jordan', 'Michael', 'Michael Bakari Jordan est un acteur américain, né le 9 février 1987 à Santa Ana (Californie). ', 10),
+('Nyong\'o', 'Lupita', 'Lupita Nyong\'o, née le 1er mars 1983 à Mexico, est une actrice et réalisatrice kényane. ', 11),
+('Gurira', 'Danai', 'Danai Gurira est une actrice américaine, née le 14 février 1978 à Grinnell dans l\'Iowa. ', 12),
+('Hanks', 'Tom', 'Tom Hanks, né le 9 juillet 1956 à Concord (Californie), est un acteur, réalisateur et producteur de cinéma américain. ', 13),
+('Clarke Duncan', 'Michael', 'Michael Clarke Duncan, né le 10 décembre 1957 à Chicago, dans l\'Illinois (États-Unis), et mort le 3 septembre 2012 à Los Angeles, en Californie (États-Unis), était un acteur américain.', 14),
+('Morse', 'David', 'David Morse, né le 11 octobre 1953 à Hamilton, dans le Massachusetts aux États-Unis, est un acteur et scénariste américain.', 15),
+('Hunt', 'Bonnie', 'Bonnie Hunt est une actrice, scénariste, productrice et réalisatrice américaine née le 22 septembre 1961 à Chicago dans l\'Illinois aux États-Unis. ', 16),
+('McConaughey', 'Matthew', 'Matthew McConaughey est un acteur, réalisateur, scénariste et producteur de cinéma américain, né le 4 novembre 1969 à Uvalde (Texas). ', 17),
+('Hathaway', 'Anne', 'Anne Hathaway est une actrice américaine, née le 12 novembre 1982 à New York. ', 18),
+('Caine', 'Michael', 'Michael Caine est un acteur et producteur britannique, né le 14 mars 1933 à Londres. ', 19),
+('Lithgow', 'John', 'John Lithgow est un acteur, producteur et musicien américain, né le 19 octobre 1945 à Rochester (État de New York). ', 20),
+('Skerritt', 'Tom', 'Tom Skerritt est un acteur et réalisateur américain, né le 25 août 1933 à Détroit. ', 21),
+('Cartwright', 'Veronica', 'Veronica Cartwright est une actrice britannique, née le 20 avril 1949 à Bristol. ', 22),
+('Stanton', 'Harry Dean ', 'Harry Dean Stanton est un acteur américain né le 14 juillet 1926 à Irvine (Kentucky) et mort le 15 septembre 2017 à Los Angeles (Californie)1, connu en particulier pour son rôle dans Paris, Texas de Wim Wenders, palme d\'or au Festival de Cannes 1984. ', 23),
+('Robbins', 'Tim', 'Tim Robbins est un acteur, réalisateur et scénariste américain né le 16 octobre 1958 à West Covina (Californie).', 24),
+('Freeman', 'Morgan', 'Morgan Freeman, né le 1er juin 1937 à Memphis (Tennessee), est un acteur américain. ', 25),
+('Gunton', 'Bob', 'Bob Gunton est un acteur américain, né le 15 novembre 1945 à Santa Monica, en Californie (États-Unis). ', 26),
+('Sadler', 'William', 'William Sadler est un acteur américain, né le 13 avril 1950 à Buffalo dans l\'État de New York aux États-Unis. ', 27),
+('Sinise', 'Gary', 'Gary Sinise est un acteur, producteur, réalisateur américain et occasionnellement musicien1, né le 17 mars 1955 à Blue Island (Illinois). ', 28),
+('Wright', 'Robin', 'Robin Wright, née le 8 avril 1966 à Dallas (Texas), est une actrice, productrice et réalisatrice américaine. ', 29),
+('Williamson', 'Mykelti', 'Mykelti Williamson est un acteur américain né le 4 mars 1957 à Saint-Louis (Missouri). ', 30),
+('Walken', 'Christopher', 'Christopher Walken est un acteur et danseur américain né le 31 mars 1943 à New York. ', 31),
+('Sheen', 'Martin', 'Ramón Estévez, dit Martin Sheen, est un acteur américain né le 3 août 1940 à Dayton (Ohio).', 32),
+('Downey Jr.', 'Robert', 'Robert Downey Jr. est un acteur américain, né le 4 avril 1965 à New York.', 33),
+('Hemsworth', 'Chris', 'Christopher Hemsworth, dit Chris Hemsworth, est un acteur australien, né le 11 août 1983 à Melbourne. ', 34),
+('Ruffalo', 'Mark', 'Mark Ruffalo est un acteur, producteur de cinéma, scénariste et réalisateur américain, né le 22 novembre 1967 à Kenosha (Wisconsin). ', 35),
+('Evans', 'Chris', 'Chris Evans est un acteur américain, né le 13 juin 1981 à Sudbury (Massachusetts). ', 36),
+('Crowe', 'Russel', 'Russell Crowe est un acteur et réalisateur néo-zélandais, né le 7 avril 1964 à Wellington. ', 37),
+('Phoenix', 'Joaquin', 'Joaquin Phoenix est un acteur américain né le 28 octobre 1974 à San Juan (Porto Rico). ', 38),
+('Nielsen', 'Connie', 'Connie Nielsen, née le 3 juillet 1965 à Elling, Frederikshavn, est une actrice danoise. ', 39),
+('Reed', 'Oliver', 'Oliver Reed est un acteur britannique né le 13 février 1938 à Londres dans le quartier de Wimbledon et mort le 2 mai 1999 à La Valette (Malte). ', 40),
+('Neeson', 'Liam', 'Liam Neeson, de son vrai nom William John Neeson, né le 7 juin 1952 à Ballymena (Irlande du Nord), est un acteur britanno-américain. ', 41),
+('Kingsley', 'Ben', 'Ben Kingsley est un acteur britannique d\'ascendance indienne, né le 31 décembre 1943 à Snainton (Yorkshire, Royaume-Uni). ', 42),
+('Fiennes', 'Ralph', 'Ralph Fiennes (nom prononcé en anglais /faɪnz/) est un acteur, réalisateur et producteur de cinéma britannique et serbe1, né le 22 décembre 1962 à Ipswich (Suffolk). ', 43),
+('Goodall', 'Caroline', 'Caroline Goodall est une actrice anglaise, née le 13 novembre 1959 à Londres (Royaume-Uni). ', 44);
 
 -- --------------------------------------------------------
 
@@ -202,8 +203,8 @@ INSERT INTO `tbl_genre` (`id`, `genre`) VALUES
 (4, 'Biopic'),
 (5, 'Comedie'),
 (6, 'Drame'),
-(7, 'horreur'),
-(8, 'Gamille'),
+(7, 'Horreur'),
+(8, 'Famille'),
 (9, 'Fantastique'),
 (10, 'Guerre'),
 (11, 'Histoire'),
@@ -317,6 +318,12 @@ INSERT INTO `tbl_realisateurs_films` (`id_realisateurs`, `id_films`) VALUES
 --
 
 --
+-- Index pour la table `tbl_acteurs`
+--
+ALTER TABLE `tbl_acteurs`
+  ADD PRIMARY KEY (`id_acteur`);
+
+--
 -- Index pour la table `tbl_films`
 --
 ALTER TABLE `tbl_films`
@@ -338,6 +345,11 @@ ALTER TABLE `tbl_realisateurs`
 -- AUTO_INCREMENT pour les tables exportées
 --
 
+--
+-- AUTO_INCREMENT pour la table `tbl_acteurs`
+--
+ALTER TABLE `tbl_acteurs`
+  MODIFY `id_acteur` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 --
 -- AUTO_INCREMENT pour la table `tbl_films`
 --
