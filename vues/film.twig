@@ -74,7 +74,7 @@
 
 {% for detail in details %}
 
-<img src="/annuaire-de-films/media/{{detail.id}}.jpg" height="300px" width="202px">
+<img src="/annuaire-de-films/media/{{detail.id}}.jpg" height="350px" width="250px">
 {{ detail.titre }}
 
 
@@ -93,8 +93,10 @@ Acteurs :
 <a href="/annuaire-de-films/acteurs/detail/{{actid}}">{{ acteur[loop.index0]~","}}</a>
 {% endfor %}
 {{ detail.description }}
-Bande annonce : <iframe width="560" height="315" src="{{ detail.bande_annonce|raw  }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+Bande annonce : <div class="embed-responsive embed-responsive-16by9">
+                    <iframe src="{{ detail.bande_annonce|raw  }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
 
 {% endfor %}
 
