@@ -1,32 +1,29 @@
 {% extends 'accueil.twig' %}
 {% block titre %}
 
+    <h2>Les meilleurs réalisateurs</h2>
 
-<h2>Les meilleurs réalisateurs</h2>
 {% endblock %}
 
 
 {% block content %}
+ 
+                    {# Liste les réalisateurs#}
 
-<div class="d-flex flex-wrap justify-content-between">
-    {% for realisateur in realisateurs %}
-    <div class="d-flex flex-column pt-5 pb-5">
-        <a href={{"/annuaire-de-films/realisateurs/detail/"~realisateur.id}}><img src="/annuaire-de-films/media/photo-realisateur/{{realisateur.id}}.jpg"
-                height="100px" width="80px"></a>
-        <div class="d-flex align-items-stretch pt-2">
-        </div>
+    <div class="d-flex flex-wrap justify-content-start pt-3">
+        {% for realisateur in realisateurs %}
+            <div class="d-flex flex-column p-3">
+                <a href={{"/annuaire-de-films/realisateurs/detail/"~realisateur.id}}><img src="/annuaire-de-films/media/photo-realisateur/{{realisateur.id}}.jpg"
+                height="200px" width="150px"></a>
+                <div class="pt-2">
+                    {{ realisateur.realisateur }}
+                </div>
+            </div>
+        {% endfor %}
     </div>
-    {% endfor %}
-</div>
-{% for realisateur in realisateurs %}
 
-{{ realisateur.realisateur }}
-{{ realisateur.filmographie }}
 
-{% endfor %}
-
-{% for detail in details %}
-
+                            {# Détails pour chaque réalisateur #}
 
 <img src="/annuaire-de-films/media/photo-realisateur/{{detail.id}}.jpg" height="300px" width="202px">
 {{ detail.realisateur }}

@@ -16,7 +16,6 @@ function bdd_realList() {
     GROUP BY tbl_realisateurs.id_realisateur ORDER BY tbl_realisateurs.nom_realisateur";
 
 $response = $bdd->prepare( $request );
-// $response->bindParam(':num', $num, PDO::PARAM_INT)
 $response->execute();
 return $response->fetchAll(PDO::FETCH_ASSOC);
 
@@ -40,8 +39,7 @@ WHERE tbl_realisateurs.id_realisateur = $id
 GROUP BY tbl_realisateurs.id_realisateur ORDER BY tbl_realisateurs.nom_realisateur";
 
 $response = $bdd->prepare( $request );
-// $response->bindParam(':num', $num, PDO::PARAM_INT)
+$response->bindParam(':id', $id, PDO::PARAM_INT);
 $response->execute();
 return $response->fetchAll(PDO::FETCH_ASSOC);
-
 }

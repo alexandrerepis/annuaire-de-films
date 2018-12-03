@@ -1,20 +1,4 @@
-body {
-  background-image: url(media/background.jpg);
-}
-body main {
-  background-color: white;
-}
-
-/*# sourceMappingURL=style.css.map */
-/*!
- * Project_Name: Themezy Movie Review
- * Author: Themezy
- * Email: info@themezy.com
- * URL: http://themezy.com
- */
-/*=========================================== 
- * Importing CSS Libraries
- *===========================================*/
+<<<<<<< HEAD
  article,
  aside,
  details,
@@ -41,7 +25,6 @@ body main {
    display: none; }
  
  html {
-   background: #fff;
    color: #000;
    -webkit-text-size-adjust: 100%;
    -ms-text-size-adjust: 100%; }
@@ -65,7 +48,8 @@ body main {
  
  h1 {
    font-size: 2em;
-   margin: 0.67em 0; }
+   margin: 0.67em 0;
+   color: white; }
  
  h2 {
    font-size: 1.5em;
@@ -86,10 +70,12 @@ body main {
  h6 {
    font-size: 0.75em;
    margin: 2.33em 0; }
+  
+  .films{
+   font-size: 3rem; }
  
  abbr[title] {
    border-bottom: 1px dotted; }
- 
  b,
  strong {
    font-weight: bold; }
@@ -220,8 +206,9 @@ body main {
   */
  body {
    background-color: #131a20;
-   background-image: url(media/background.jpg);
+   background: linear-gradient(rgba(15,15,15,0.8),rgba(15,15,15,0.8)), url(media/cine.jpg);
    background-position: top center;
+   background-size: cover;
    background-repeat: no-repeat;
    color: #84878d;
    font-family: "Roboto", "Open Sans", sans-serif;
@@ -1537,7 +1524,9 @@ body main {
   .visu {
     background: white;
     border-radius: 5px;
-    padding: 30px; }
+    height: 100%; 
+    overflow: auto;
+  }
    
  .section-title {
    font-size: 30px;
@@ -1686,7 +1675,8 @@ body main {
   * Footer Styles
   */
  .site-footer {
-   padding: 50px 0; }
+   padding: 50px 0;
+   background-color: rgb(27, 31, 37); }
    .site-footer .widget {
      margin-bottom: 30px; }
    .site-footer .widget-title {
@@ -1714,4 +1704,62 @@ body main {
        color: #ffaa3c; }
    .site-footer .colophon {
      padding-top: 30px; }
- 
+  .bg-light {
+      background-color: transparent!important; 
+  }
+  .navbar-collapse {
+    float: right;
+    flex-grow: 0;
+}
+@media (min-width: 992px) {
+.navbar-expand-lg{
+  display: flex;
+    justify-content: flex-end;
+}}
+.select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding: 10px 50px 10px 10px;
+  background-color: #e7e7e7;
+  border-radius: 5px;
+  border: none;
+  margin-right: 10px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+  outline: none;
+  background-image: url(media/select.png);
+  background-repeat: no-repeat;
+  background-position: 100% center;
+}
+=======
+body {
+  background: linear-gradient(rgba(15, 15, 15, 0.8), rgba(5, 5, 5, 0.8)), url(media/background.jpg) no-repeat center;
+  background-size: cover;
+}
+body main {
+  background-color: white;
+}
+body .main-navigation {
+  float: right;
+  background: white;
+  border-radius: 5px;
+}
+
+.main-navigation .menu-toggle, .main-navigation .menu, .main-navigation .search-form {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.main-navigation .menu-toggle {
+  color: #333;
+  border: none;
+  background: none;
+  font-size: 18px;
+  font-size: 1.2em;
+  padding: 8px 15px;
+  display: none;
+  outline: none;
+}
+
+/*# sourceMappingURL=style.css.map */
+>>>>>>> 5d439b5b87db82aa26a558de1c1977014fcbdede
