@@ -30,6 +30,9 @@
 
 <img src="/annuaire-de-films/media/photo-realisateur/{{detail.id}}.jpg" height="300px" width="202px">
 {{ detail.realisateur }}
+Né(e) le : {{ detail.jour_naissance }} {{ detail.mois_naissance }} {{ detail.annee_naissance }}
+Lieu de naissance : {{ detail.lieu_naissance }}
+Nationalité : {{ detail.nationalite }}
 Biographie : {{ detail.biographie }}
 Filmographie :
 {% set filmids = detail.filmid|split(',') %}

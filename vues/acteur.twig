@@ -27,6 +27,8 @@ height="100px" width="80px"></a>
 
 {{ detail.acteur }}
 Né(e) le : {{ detail.jour_naissance }} {{ detail.mois_naissance }} {{ detail.annee_naissance }}
+Lieu de naissance : {{ detail.lieu_naissance }}
+Nationalité : {{ detail.nationalite }}
 Biographie : {{ detail.biographie }}
 Filmographie : 
 {% set filmids = detail.filmid|split(',') %}
