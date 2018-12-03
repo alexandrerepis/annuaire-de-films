@@ -13,7 +13,7 @@
     <div class="d-flex flex-wrap justify-content-around pt-3">
         {% for realisateur in realisateurs %}
             <div class="d-flex flex-column p-3">
-                <a href={{"/annuaire-de-films/realisateurs/detail/"~realisateur.id}}><img src="/annuaire-de-films/media/photo-realisateur/{{realisateur.id}}.jpg"
+                <a href={{"/annuaire-de-films/realisateurs/detail/"~realisateur.id}}><img class="img-fluid" src="/annuaire-de-films/media/photo-realisateur/{{realisateur.id}}.jpg"
                 height="200px" width="150px"></a>
                 <div class="pt-2">
                     {{ realisateur.realisateur }}
@@ -27,7 +27,7 @@
 
     {% for detail in details %}
         <div class="d-flex flex-column flex-md-row align-items-center align-items-md-start pt-3">
-            <img src="/annuaire-de-films/media/photo-realisateur/{{detail.id}}.jpg" height="500px" width="370px">
+            <img class="img-fluid" src="/annuaire-de-films/media/photo-realisateur/{{detail.id}}.jpg" height="500px" width="370px">
             <div class="d-flex flex-column pl-0 pl-md-5">
                 <div class="films pt-2 pt-md-0">{{ detail.realisateur }}</div>
                 <div class="pt-5"><b>Né(e) le : </b>{{ detail.jour_naissance }} {{ detail.mois_naissance }} {{ detail.annee_naissance }}</div>
