@@ -26,6 +26,7 @@
 <img src="/annuaire-de-films/media/photo-acteur/{{detail.id}}.jpg">
 
 {{ detail.acteur }}
+Né(e) le : {{ detail.jour_naissance }} {{ detail.mois_naissance }} {{ detail.annee_naissance }}
 Biographie : {{ detail.biographie }}
 Filmographie : 
 {% set filmids = detail.filmid|split(',') %}

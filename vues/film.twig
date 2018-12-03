@@ -78,7 +78,7 @@ Acteurs :
 <a href="/annuaire-de-films/acteurs/detail/{{actid}}">{{ acteur[loop.index0]~","}}</a>
 {% endfor %}
 {{ detail.description }}
-Bande annonce : {{ detail.bande_annonce|raw  }}
+Bande annonce : <iframe width="560" height="315" src="{{ detail.bande_annonce|raw  }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 {% endfor %}
 

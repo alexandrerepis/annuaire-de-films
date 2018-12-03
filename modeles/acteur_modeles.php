@@ -25,7 +25,7 @@ function bdd_actDetail($id = 1) {
 global $bdd;
 
 $request = "SELECT tbl_acteurs.id_acteur AS id, 
-GROUP_CONCAT(DISTINCT tbl_films.id SEPARATOR ',') AS filmid,
+GROUP_CONCAT(DISTINCT tbl_films.id SEPARATOR ',') AS filmid, tbl_acteurs.jour_naissance, tbl_acteurs.mois_naissance, tbl_acteurs.annee_naissance,
 CONCAT(tbl_acteurs.prenom_acteur,' ', tbl_acteurs.nom_acteur) AS acteur, GROUP_CONCAT(DISTINCT 
 CONCAT( tbl_films.titre , ' de ', tbl_films.annee_de_sortie)SEPARATOR ', ') AS filmographie, 
 tbl_acteurs.bio_acteur AS biographie
