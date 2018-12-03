@@ -12,7 +12,7 @@
 {% for acteur in acteurs %}
 <div class="d-flex flex-column pt-5 pb-5"></div>
 <a href={{"/annuaire-de-films/acteurs/detail/"~acteur.id}}>{{ acteur.acteur }}<img src="/annuaire-de-films/media/photo-acteur/{{acteur.id}}.jpg"
-height="100px" width="80px"></a>
+height="200px" width="150px"></a>
 {{ acteur.filmographie }}
 
 <div class="d-flex align-items-stretch pt-2">
@@ -23,7 +23,7 @@ height="100px" width="80px"></a>
 </div>
 {% for detail in details %}
 
-<img src="/annuaire-de-films/media/photo-acteur/{{detail.id}}.jpg">
+<img src="/annuaire-de-films/media/photo-acteur/{{detail.id}}.jpg" height="480px" width="380px">
 
 {{ detail.acteur }}
 Né(e) le : {{ detail.jour_naissance }} {{ detail.mois_naissance }} {{ detail.annee_naissance }}
