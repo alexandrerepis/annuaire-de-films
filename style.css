@@ -43,7 +43,8 @@
    a:focus {
      outline: thin dotted; }
    a:hover, a:active {
-     outline: 0; }
+     outline: 0;
+    color:rgb(78, 74, 74); }
  
  h1 {
    font-size: 2em;
@@ -205,13 +206,13 @@
   */
  body {
    background-color: #131a20;
-   background: linear-gradient(rgba(15,15,15,0.8),rgba(15,15,15,0.8)), url(media/cine.jpg);
+   background: linear-gradient(rgba(39, 38, 38, 0.8),rgba(39, 38, 38, 0.8)), url(media/cine.jpg);
    background-position: top center;
    background-size: cover;
    background-repeat: no-repeat;
    color: #84878d;
    font-family: "Roboto", "Open Sans", sans-serif;
-   font-size: 15px;
+   font-size: 20px;
    font-weight: 400;
    line-height: normal; }
  
@@ -1706,6 +1707,9 @@
   .bg-light {
       background-color: transparent!important; 
   }
+  .navbar-toggler{
+    background-color: white !important;
+  }
   .navbar-collapse {
     float: right;
     flex-grow: 0;
@@ -1730,35 +1734,3 @@
   background-repeat: no-repeat;
   background-position: 100% center;
 }
-
-
-/* body main {
-  background: linear-gradient(rgba(15, 15, 15, 0.8), rgba(5, 5, 5, 0.8)), url(media/background.jpg) no-repeat center;
-  background-size: cover;
-}
-body main {
-  background-color: white;
-}
-body .main-navigation {
-  float: right;
-  background: white;
-  border-radius: 5px;
-}
-
-.main-navigation .menu-toggle, .main-navigation .menu, .main-navigation .search-form {
-  display: inline-block;
-  vertical-align: middle;
-}
-
-.main-navigation .menu-toggle {
-  color: #333;
-  border: none;
-  background: none;
-  font-size: 18px;
-  font-size: 1.2em;
-  padding: 8px 15px;
-  display: none;
-  outline: none;
-} */
-
-/*# sourceMappingURL=style.css.map */

@@ -34,7 +34,7 @@ function bdd_filmDetail($id = 1) {
     GROUP_CONCAT(DISTINCT tbl_acteurs.prenom_acteur,' ', tbl_acteurs.nom_acteur SEPARATOR ',') AS acteur,
     GROUP_CONCAT(DISTINCT tbl_acteurs.id_acteur SEPARATOR ',') AS actid, tbl_films.bande_annonce,
     GROUP_CONCAT(DISTINCT(`genre`) SEPARATOR ',') AS Genre, tbl_realisateurs.id_realisateur AS realid,
-    CONCAT(GROUP_CONCAT(DISTINCT tbl_realisateurs.prenom_realisateur SEPARATOR ','), ' ', tbl_realisateurs.nom_realisateur)
+    CONCAT(GROUP_CONCAT(DISTINCT tbl_realisateurs.prenom_realisateur SEPARATOR ', '), ' ', tbl_realisateurs.nom_realisateur)
     AS realisateur
     FROM tbl_films
     INNER JOIN tbl_genre_films ON tbl_films.id = tbl_genre_films.id_films

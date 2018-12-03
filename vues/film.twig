@@ -15,8 +15,6 @@
 					<li class="menu-item"><a class="nav-link" href="/annuaire-de-films/films/list/0/0">Décroissant</a></li>
 				</ul>
 			</div>
-            <img class="img-fluid p-3" src="media/film.png"  height="120px" width="120px">
-            
 		</nav>
         {% endif %}
 {% endblock nav %}
@@ -46,7 +44,6 @@
                     <option value="/annuaire-de-films/films/genre/17">Western</option>
                 </select>
             </div>
-
 
         {% if isGenre %}
             <a href={{"/annuaire-de-films/films/genre/"~idGenre~"/1"}}>Croissant</a>
@@ -108,32 +105,25 @@
 
                                 {#Détails pour chaque film#}
     <div class="p-3">
-        <div class="d-flex flex-row">
+        <div class="d-flex flex-row flex-column flex-md-row align-items-center align-items-md-start">
             {% for detail in details %}
-                <img class="p-2" src="/annuaire-de-films/media/{{detail.id}}.jpg" height="300px" width="202px">
+                <img class="p-2" src="/annuaire-de-films/media/{{detail.id}}.jpg" height="500px" width="370px">
                 <div class="d-flex flex-column pl-3">
-                    <b class="films">{{ detail.titre }}</b>
-                    <b class="pt-2">Sorti en : </b>{{ detail.annee_de_sortie }}
+                    <h2 class="films mt-3 mt-md-0">{{ detail.titre }}</h2></br>
+                    <div><b class="pt-2">Année de sortie : </b>{{ detail.annee_de_sortie }}</br></div>
                     <b class="pt-2">Réalisateur : </b><a href={{"/annuaire-de-films/realisateurs/detail/"~detail.realid}}>{{ detail.realisateur }}</a>
                     <b class="pt-2">Acteurs : </b>
                     {% set acteur = detail.acteur|split(',') %}
                     {% set actids = detail.actid|split(',') %}
                     {% for actid in actids %}
-                        <a href="/annuaire-de-films/acteurs/detail/{{actid}}">{{ acteur[loop.index0]~","}}</a>
+                        <a href="/annuaire-de-films/acteurs/detail/{{actid}}">{{ acteur[loop.index0]~""}}</a>
                     {% endfor %}
                 </div>
         </div>        
-                <b>Synopsis : </b>{{ detail.description }}
-                <b>Bande annonce : <div class="embed-responsive embed-responsive-16by9">
+                <div class="pt-3"><b>Synopsis : </b>{{ detail.description }}</div>
+                <div class="pt-3"><b>Bande annonce : </div><div class="mt-2 embed-responsive embed-responsive-16by9">
                     <iframe src="{{ detail.bande_annonce|raw  }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
             {% endfor %} 
     </div>
-
-
-   
-</div>
-
-
-
 {% endblock content %}
