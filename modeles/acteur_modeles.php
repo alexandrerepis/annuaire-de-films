@@ -41,4 +41,3 @@ $response->execute();
 return $response->fetchAll(PDO::FETCH_ASSOC);
 
 }
-
