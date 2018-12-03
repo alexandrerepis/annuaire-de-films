@@ -120,9 +120,15 @@
                 </div>
         </div>        
                 <b>Synopsis : </b>{{ detail.description }}
-                <b>Bande annonce : </b><iframe width="560" height="315" src="{{ detail.bande_annonce|raw  }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <b>Bande annonce : <div class="embed-responsive embed-responsive-16by9">
+                    <iframe src="{{ detail.bande_annonce|raw  }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
             {% endfor %} 
     </div>
+
+
+    {% endfor %}
+</div>
 
 
 
