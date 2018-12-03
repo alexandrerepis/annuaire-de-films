@@ -5,9 +5,6 @@ $loader = new Twig_Loader_Filesystem('vues');
 $twig = new Twig_Environment($loader, array(
     'cache' => false,
 ));
-// $index = $twig->load('accueil.twig');
-
-
 
 $requete = explode("/", trim($_SERVER['REQUEST_URI'], "/"));
 $controller = (count($requete) === 1) ? "films" : $requete[1];
@@ -40,4 +37,3 @@ switch ($controller) {
         require_once('controleurs/film_controleur.php');
         break;
 }
-

@@ -1,9 +1,7 @@
 <?php
 $maxFilm = 12;
-
 require_once("modeles/film_modeles.php");
-
-       
+   
     function filmList() {
         global $twig, $base_url;
         $films = bdd_filmList();
@@ -13,9 +11,9 @@ require_once("modeles/film_modeles.php");
     function filmDetail() {
         global $twig, $id, $base_url;
         $films = bdd_filmDetail();
-                   if ($id !=0) {
+            if ($id !=0) {
                 $details = bdd_filmDetail($id);
-            } elseif ($id < 1 || $id > 12) {
+            } elseif ($id < 1 || $id > $maxFilm) {
                 $details = bdd_filmDetail(1);
             }
         echo $twig->render('film.twig', array('details' => $details, "base_url" => $base_url));
@@ -35,17 +33,13 @@ require_once("modeles/film_modeles.php");
 
     function filmGenre() {
         global $twig, $id, $base_url, $genres;
-        $films = bdd_filmGenre();
-        $template = $twig->load('film.twig');
-        
+        // $films = bdd_filmList();        
             if ($id !=0) {
                 $genres = bdd_filmGenre($id);
             } elseif ($id < 1 || $id > 17) {
                 $genres = bdd_filmList();
-            }
-        
-       
-        echo $twig->render('film.twig',array('genres' => $genres, "base_url" => $base_url));
+            }      
+        echo $twig->render('film.twig',array('genres' => $genres,"base_url" => $base_url));
     }
 
     

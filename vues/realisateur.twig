@@ -1,38 +1,44 @@
 {% extends 'accueil.twig' %}
 {% block titre %}
 
+    <h2>Les meilleurs réalisateurs</h2>
 
-<h2>Les meilleurs réalisateurs</h2>
 {% endblock %}
 
 
 {% block content %}
+ 
+                    {# Liste les réalisateurs#}
 
-<div class="d-flex flex-wrap justify-content-between">
-    {% for realisateur in realisateurs %}
-    <div class="d-flex flex-column pt-5 pb-5">
-        <a href={{"/annuaire-de-films/realisateurs/detail/"~realisateur.id}}><img src="/annuaire-de-films/media/photo-realisateur/{{realisateur.id}}.jpg"
-                height="100px" width="80px"></a>
-        <div class="d-flex align-items-stretch pt-2">
+    <div class="d-flex flex-wrap justify-content-start pt-3">
+        {% for realisateur in realisateurs %}
+            <div class="d-flex flex-column p-3">
+                <a href={{"/annuaire-de-films/realisateurs/detail/"~realisateur.id}}><img src="/annuaire-de-films/media/photo-realisateur/{{realisateur.id}}.jpg"
+                height="200px" width="150px"></a>
+                <div class="pt-2">
+                    {{ realisateur.realisateur }}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+
+                            {# Détails pour chaque réalisateur #}
+
+    <div class="d-flex flex-row">
+        {% for detail in details %}
+        <img class="p-2" src="/annuaire-de-films/media/photo-realisateur/{{detail.id}}.jpg" height="300px" width="202px">
+        <div class="d-flex flex-column p-1">
+                <b class="films p-2">{{ detail.realisateur }}</b>
+                {% set filmids = detail.filmid|split(',') %}
+                {% set filmographie = detail.filmographie|split(',') %}
+                <b class="p-2">Filmographie : </b>
+                {% for filmid in filmids %}
+                    <a class="pl-2" href="/annuaire-de-films/films/detail/{{filmid}}">{{ filmographie[loop.index0]~""}}</a>
+                {% endfor %}
         </div>
     </div>
-    {% endfor %}
-</div>
-{% for realisateur in realisateurs %}
-    
-    {{ realisateur.realisateur }}
-    {{ realisateur.filmographie }}
-  
-{% endfor %}
-
-{% for detail in details %}
-
-
-<img src="/annuaire-de-films/media/photo-realisateur/{{detail.id}}.jpg"  height="300px" width="202px">
-{{ detail.realisateur }}
-{{ detail.biographie }}
-<a href="/annuaire-de-films/detail/films/"~{{detail.filmid}}>{{ detail.filmographie }}</a>
-
-{% endfor %}
+      <b class="p-2">Biographie : </b>{{ detail.biographie }}
+    {% endfor %} 
 
 {% endblock %}
