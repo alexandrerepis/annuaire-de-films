@@ -24,21 +24,20 @@
 
 
                             {# Détails pour chaque réalisateur #}
+                            {% for detail in details %}
+<img src="/annuaire-de-films/media/photo-realisateur/{{detail.id}}.jpg" height="300px" width="202px">
+{{ detail.realisateur }}
+Né(e) le : {{ detail.jour_naissance }} {{ detail.mois_naissance }} {{ detail.annee_naissance }}
+Lieu de naissance : {{ detail.lieu_naissance }}
+Nationalité : {{ detail.nationalite }}
+Biographie : {{ detail.biographie }}
+Filmographie :
+{% set filmids = detail.filmid|split(',') %}
+{% set filmographie = detail.filmographie|split(',') %}
+{% for filmid in filmids %}
+<a href="/annuaire-de-films/films/detail/{{filmid}}">{{ filmographie[loop.index0]~""}}</a>
+{% endfor %}
 
-    <div class="d-flex flex-row">
-        {% for detail in details %}
-        <img class="p-2" src="/annuaire-de-films/media/photo-realisateur/{{detail.id}}.jpg" height="300px" width="202px">
-        <div class="d-flex flex-column p-1">
-                <b class="films p-2">{{ detail.realisateur }}</b>
-                {% set filmids = detail.filmid|split(',') %}
-                {% set filmographie = detail.filmographie|split(',') %}
-                <b class="p-2">Filmographie : </b>
-                {% for filmid in filmids %}
-                    <a class="pl-2" href="/annuaire-de-films/films/detail/{{filmid}}">{{ filmographie[loop.index0]~""}}</a>
-                {% endfor %}
-        </div>
-    </div>
-      <b class="p-2">Biographie : </b>{{ detail.biographie }}
-    {% endfor %} 
+{% endfor %}
 
 {% endblock %}

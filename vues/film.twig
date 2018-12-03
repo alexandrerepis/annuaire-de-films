@@ -15,6 +15,8 @@
 					<li class="menu-item"><a class="nav-link" href="/annuaire-de-films/films/list/0/0">Décroissant</a></li>
 				</ul>
 			</div>
+            <img class="img-fluid p-3" src="media/film.png"  height="120px" width="120px">
+            
 		</nav>
         {% endif %}
 {% endblock nav %}
@@ -49,7 +51,7 @@
             <a href={{"/annuaire-de-films/films/genre/"~idGenre~"/1"}}>Croissant</a>
             <a href={{"/annuaire-de-films/films/genre/"~idGenre~"/0"}}>Décroissant</a>
         {% endif %}
-
+          
 
     {% endif %}
 
@@ -121,11 +123,16 @@
                 </div>
         </div>        
                 <b>Synopsis : </b>{{ detail.description }}
-                <b>Bande annonce : </b><iframe width="560" height="315" src="{{ detail.bande_annonce|raw  }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <b>Bande annonce : <div class="embed-responsive embed-responsive-16by9">
+                    <iframe src="{{ detail.bande_annonce|raw  }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
             {% endfor %} 
     </div>
 
 
+   
+</div>
+
+
 
 {% endblock content %}
-

@@ -7,33 +7,33 @@
 
 {% block content %}
 
-                                      {#Liste tous les acteurs#}
+<div class="d-flex flex-wrap justify-content-between"></div>
+{% for acteur in acteurs %}
+<div class="d-flex flex-column pt-5 pb-5"></div>
+<a href={{"/annuaire-de-films/acteurs/detail/"~acteur.id}}>{{ acteur.acteur }}<img src="/annuaire-de-films/media/photo-acteur/{{acteur.id}}.jpg"
+height="100px" width="80px"></a>
+{{ acteur.filmographie }}
 
-    <div class="d-flex flex-wrap justify-content-around">
-        {% for acteur in acteurs %}
-            <div class="d-flex flex-column p-3">
-                <a class="d-flex flex-column" href={{"/annuaire-de-films/acteurs/detail/"~acteur.id}}><img class="p-2" src="/annuaire-de-films/media/photo-acteur/{{acteur.id}}.jpg"
-                height="200px" width="150px">{{ acteur.acteur }}</a>
-            </div>
-        {% endfor %}
-    </div>
+<div class="d-flex align-items-stretch pt-2">
+</div>
+</div>
+{% endfor %}
 
-                                      {#Détails de chaque acteur#}
-    <div class="d-flex flex-row">
-        {% for detail in details %}
-            <img class="p-2" src="/annuaire-de-films/media/photo-acteur/{{detail.id}}.jpg">
-            <div class="d-flex flex-column p-1">
-                <b class="films p-2">{{ detail.acteur }}</b>
-                <b class="p-2">Filmographie : </b>
-                Né(e) le : {{ detail.jour_naissance }} {{ detail.mois_naissance }} {{ detail.annee_naissance }}
-                {% set filmids = detail.filmid|split(',') %}
-                {% set filmographie = detail.filmographie|split(',') %}
-                {% for filmid in filmids %}
-                    <a class="pl-2" href="/annuaire-de-films/films/detail/{{filmid}}">{{ filmographie[loop.index0]~""}}</a>
-                {% endfor %}
-            </div>
-    </div>
-            <b class="p-2">Biographie : </b>{{ detail.biographie }}
-        {% endfor %} 
+</div>
+{% for detail in details %}
 
+<img src="/annuaire-de-films/media/photo-acteur/{{detail.id}}.jpg">
+
+{{ detail.acteur }}
+Né(e) le : {{ detail.jour_naissance }} {{ detail.mois_naissance }} {{ detail.annee_naissance }}
+Lieu de naissance : {{ detail.lieu_naissance }}
+Nationalité : {{ detail.nationalite }}
+Biographie : {{ detail.biographie }}
+Filmographie : 
+{% set filmids = detail.filmid|split(',') %}
+{% set filmographie = detail.filmographie|split(',') %}
+{% for filmid in filmids %}
+<a href="/annuaire-de-films/films/detail/{{filmid}}">{{ filmographie[loop.index0]~""}}</a>
+{% endfor %}
+{% endfor %}
 {% endblock %}

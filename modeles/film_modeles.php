@@ -1,5 +1,6 @@
 <?php
 require_once 'movies.php';
+
 // echo $controller;
 // echo $action;
 // echo $id;
