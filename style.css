@@ -1,3 +1,4 @@
+<<<<<<< HEAD
  article,
  aside,
  details,
@@ -1730,3 +1731,35 @@
   background-repeat: no-repeat;
   background-position: 100% center;
 }
+=======
+body {
+  background: linear-gradient(rgba(15, 15, 15, 0.8), rgba(5, 5, 5, 0.8)), url(media/background.jpg) no-repeat center;
+  background-size: cover;
+}
+body main {
+  background-color: white;
+}
+body .main-navigation {
+  float: right;
+  background: white;
+  border-radius: 5px;
+}
+
+.main-navigation .menu-toggle, .main-navigation .menu, .main-navigation .search-form {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.main-navigation .menu-toggle {
+  color: #333;
+  border: none;
+  background: none;
+  font-size: 18px;
+  font-size: 1.2em;
+  padding: 8px 15px;
+  display: none;
+  outline: none;
+}
+
+/*# sourceMappingURL=style.css.map */
+>>>>>>> 5d439b5b87db82aa26a558de1c1977014fcbdede

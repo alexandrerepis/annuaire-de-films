@@ -25,6 +25,7 @@
             <div class="d-flex flex-column p-1">
                 <b class="films p-2">{{ detail.acteur }}</b>
                 <b class="p-2">Filmographie : </b>
+                Né(e) le : {{ detail.jour_naissance }} {{ detail.mois_naissance }} {{ detail.annee_naissance }}
                 {% set filmids = detail.filmid|split(',') %}
                 {% set filmographie = detail.filmographie|split(',') %}
                 {% for filmid in filmids %}

@@ -16,7 +16,6 @@ function bdd_realList() {
     GROUP BY tbl_realisateurs.id_realisateur ORDER BY tbl_realisateurs.nom_realisateur";
 
 $response = $bdd->prepare( $request );
-// $response->bindParam(':num', $num, PDO::PARAM_INT)
 $response->execute();
 return $response->fetchAll(PDO::FETCH_ASSOC);
 
@@ -34,12 +33,11 @@ function bdd_realDetail($id = 1) {
     INNER JOIN tbl_genre ON tbl_genre.id = tbl_genre_films.id_genres
     INNER JOIN tbl_realisateurs_films ON tbl_films.id = tbl_realisateurs_films.id_films
     INNER JOIN tbl_realisateurs ON tbl_realisateurs_films.id_realisateurs = tbl_realisateurs.id_realisateur
-    WHERE tbl_realisateurs.id_realisateur = $id
+    WHERE tbl_realisateurs.id_realisateur =:id
     GROUP BY tbl_realisateurs.id_realisateur ORDER BY tbl_realisateurs.nom_realisateur";
 
 $response = $bdd->prepare( $request );
-// $response->bindParam(':num', $num, PDO::PARAM_INT)
+$response->bindParam(':id', $id, PDO::PARAM_INT);
 $response->execute();
 return $response->fetchAll(PDO::FETCH_ASSOC);
-
 }

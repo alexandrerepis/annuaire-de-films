@@ -2,28 +2,56 @@
 
 {% block content %}
 
-    <div class="p-3">
-        <select class="select" id="genre" onchange="location = this.value;">
-            <option value="">--Choisissez un genre--</option>
-            <option value="/annuaire-de-films/films/genre/1">Action</option>
-            <option value="/annuaire-de-films/films/genre/2">Animation</option>
-            <option value="/annuaire-de-films/films/genre/3">Aventure</option>
-            <option value="/annuaire-de-films/films/genre/4">Biopic</option>
-            <option value="/annuaire-de-films/films/genre/5">Comédie</option>
-            <option value="/annuaire-de-films/films/genre/6">Drame</option>
-            <option value="/annuaire-de-films/films/genre/7">Horreur</option>
-            <option value="/annuaire-de-films/films/genre/8">Famille</option>
-            <option value="/annuaire-de-films/films/genre/9">Fantastique</option>
-            <option value="/annuaire-de-films/films/genre/10">Guerre</option>
-            <option value="/annuaire-de-films/films/genre/11">Histoire</option>
-            <option value="/annuaire-de-films/films/genre/12">Musical</option>
-            <option value="/annuaire-de-films/films/genre/13">Policier</option>
-            <option value="/annuaire-de-films/films/genre/14">Romance</option>
-            <option value="/annuaire-de-films/films/genre/15">Science-fiction</option>
-            <option value="/annuaire-de-films/films/genre/16">Thriller</option>
-            <option value="/annuaire-de-films/films/genre/17">Western</option>
-        </select>
-    </div>
+    {% if select %}
+            <div class="p-3">
+                <select class="select" id="genre" onchange="location = this.value;">
+                    <option value="">--Choisissez un genre--</option>
+                    <option value="/annuaire-de-films/films/genre/1">Action</option>
+                    <option value="/annuaire-de-films/films/genre/2">Animation</option>
+                    <option value="/annuaire-de-films/films/genre/3">Aventure</option>
+                    <option value="/annuaire-de-films/films/genre/4">Biopic</option>
+                    <option value="/annuaire-de-films/films/genre/5">Comédie</option>
+                    <option value="/annuaire-de-films/films/genre/6">Drame</option>
+                    <option value="/annuaire-de-films/films/genre/7">Horreur</option>
+                    <option value="/annuaire-de-films/films/genre/8">Famille</option>
+                    <option value="/annuaire-de-films/films/genre/9">Fantastique</option>
+                    <option value="/annuaire-de-films/films/genre/10">Guerre</option>
+                    <option value="/annuaire-de-films/films/genre/11">Histoire</option>
+                    <option value="/annuaire-de-films/films/genre/12">Musical</option>
+                    <option value="/annuaire-de-films/films/genre/13">Policier</option>
+                    <option value="/annuaire-de-films/films/genre/14">Romance</option>
+                    <option value="/annuaire-de-films/films/genre/15">Science-fiction</option>
+                    <option value="/annuaire-de-films/films/genre/16">Thriller</option>
+                    <option value="/annuaire-de-films/films/genre/17">Western</option>
+                </select>
+            </div>
+{% block nav %}
+    
+      {% if isList %}
+        		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<a class="navbar-brand" href="#"></a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse main-navigation" id="navbarNav">
+				<ul class="navbar-nav">
+					<li class="menu-item"><a class="nav-link disabled">Tri par année :<span class="sr-only">(current)</span></a></li>
+					<li class="menu-item"><a class="nav-link" href="/annuaire-de-films/films/list/0/1">Croissant</a></li>
+					<li class="menu-item"><a class="nav-link" href="/annuaire-de-films/films/list/0/0">Décroissant</a></li>
+				</ul>
+			</div>
+		</nav>
+        {% endif %}
+{% endblock nav %}
+
+        {% if isGenre %}
+            <a href={{"/annuaire-de-films/films/genre/"~idGenre~"/1"}}>Croissant</a>
+            <a href={{"/annuaire-de-films/films/genre/"~idGenre~"/0"}}>Décroissant</a>
+        {% endif %}
+
+
+    {% endif %}
+
 
                         {#Liste les films du genre sélectionner#}
 
@@ -92,9 +120,11 @@
                 </div>
         </div>        
                 <b>Synopsis : </b>{{ detail.description }}
-                <b>Bande annonce : </b>{{ detail.bande_annonce|raw }}
+                <b>Bande annonce : </b><iframe width="560" height="315" src="{{ detail.bande_annonce|raw  }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             {% endfor %} 
     </div>
 
 
+
 {% endblock content %}
+

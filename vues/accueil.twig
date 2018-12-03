@@ -17,38 +17,15 @@
 		<div id="site-content">
 			<header class="site-header">
 				<div class="container">
-					{# <div class="d-flex"> #}
-						<a href="/annuaire-de-films/films/list" id="branding">
-							<img src="media/logo.png" alt="logo" class="logo">
-						</a> 	
+					<a href="/annuaire-de-films/films/list/0/0" id="branding">
+						<img src="media/logo.png" alt="logo" class="logo">
 						<div class="logo-copy">
 							<h1 class="site-title">HELLOCINE</h1>
 							<p class="site-description">Le meilleur du ciné</p>
 						</div>
-					{# </div> #}
-		<nav class="navbar navbar-expand-lg navbar-light bg-light">
-			<a class="navbar-brand" href="#"></a>
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="collapse navbar-collapse main-navigation" id="navbarNav">
-				<ul class="navbar-nav">
-					<li class="menu-item"><a class="nav-link disabled">Tri par année :<span class="sr-only">(current)</span></a></li>
-					<li class="menu-item"><a class="nav-link" href="#">Croissant</a></li>
-					<li class="menu-item"><a class="nav-link" href="#">Décroissant</a></li>
-				</ul>
-			</div>
-		</nav>
-					{# <div class="main-navigation">
-						<button type="button" class="menu-toggle"><i class="fa fa-bars"></i></button>
-						<ul class="menu">
-							<li class="menu-item"><a href="index.html">Home</a></li>
-							<li class="menu-item"><a href="review.html">Movie reviews</a></li>
-							<li class="menu-item"><a href="contact.html">Contact</a></li>
-						</ul> <!-- .menu -->
-
-					</div> <!-- .main-navigation --> #}
-
+				{% block nav %}
+					
+				{% endblock nav %}
 					<div class="mobile-navigation"></div>
 				</div>
 	</header>

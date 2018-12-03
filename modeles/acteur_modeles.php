@@ -28,10 +28,11 @@ function bdd_actDetail($id = 1) {
     FROM tbl_films
     INNER JOIN tbl_films_acteurs ON tbl_films_acteurs.id_film = tbl_films.id
     INNER JOIN tbl_acteurs ON tbl_acteurs.id_acteur = tbl_films_acteurs.id_acteur
-    WHERE tbl_acteurs.id_acteur = $id
+    WHERE tbl_acteurs.id_acteur =:id
     GROUP BY tbl_acteurs.nom_acteur ORDER BY tbl_acteurs.nom_acteur"; 
 
     $response = $bdd->prepare( $request );
+    $response->bindParam(':id', $num, PDO::PARAM_INT);
     $response->execute();
     return $response->fetchAll(PDO::FETCH_ASSOC);
 }
