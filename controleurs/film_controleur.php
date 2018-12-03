@@ -41,7 +41,7 @@ require_once("modeles/film_modeles.php");
             if ($id !=0) {
                 $genres = bdd_filmGenre($id);
             } elseif ($id < 1 || $id > 17) {
-                $genres = bdd_filmList();
+                $genres = bdd_filmGenre(1);
             }
         
        

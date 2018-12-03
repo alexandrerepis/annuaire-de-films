@@ -25,12 +25,12 @@
 </br>
 
 
-    {% for genre in genres %}
-        
-            {{ genre.titre }}
-            {{ genre.annee_de_sortie }}
-            </br> 
-    {% endfor %}
+{% for genre in genres %}
+
+{{ genre.titre }}
+{{ genre.annee_de_sortie }}
+</br>
+{% endfor %}
 
 <div class="d-flex flex-wrap justify-content-between">
     {% for genre in genres %}
@@ -43,7 +43,7 @@
     </div>
     {% endfor %}
 </div>
-        
+
 
 
 <div class="d-flex flex-wrap justify-content-center">
@@ -61,27 +61,30 @@
                 {{ film.Genre }}
                 </div>
         </div>
+    </div>
     {% endfor %}
 </div>
 
 {% for detail in details %}
 
-
-
-    <img src="/annuaire-de-films/media/{{detail.id}}.jpg" height="300px" width="202px">
-    {{ detail.titre }}
-    {{ detail.annee_de_sortie }}
-    <a href={{"/annuaire-de-films/realisateurs/detail/"~detail.realid}}>{{ detail.realisateur }}</a>
-    {% set acteur = detail.acteur|split(',') %}
-    {% set actids = detail.actid|split(',') %}
-    {% for actid in actids %}
-    <a href="/annuaire-de-films/acteurs/detail/{{actid}}">{{ acteur[loop.index0]~","}}</a>
-    {% endfor %}
-    {{ detail.description }}
+<img src="/annuaire-de-films/media/{{detail.id}}.jpg" height="300px" width="202px">
+{{ detail.titre }}
+Sorti en : {{ detail.annee_de_sortie }}
+Réalisateur : <a href={{"/annuaire-de-films/realisateurs/detail/"~detail.realid}}>{{ detail.realisateur }}</a>
+Acteurs :
+{% set acteur = detail.acteur|split(',') %}
+{% set actids = detail.actid|split(',') %}
+{% for actid in actids %}
+<a href="/annuaire-de-films/acteurs/detail/{{actid}}">{{ acteur[loop.index0]~","}}</a>
+{% endfor %}
+{{ detail.description }}
+Bande annonce : <iframe width="560" height="315" src="{{ detail.bande_annonce|raw  }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 {% endfor %}
 
 
 
 
-{% endblock content %}
+
+
+{% endblock %}
