@@ -3,7 +3,11 @@
 -- https://www.phpmyadmin.net/
 --
 -- Client :  localhost:3306
+
+
+
 -- Généré le :  Lun 03 Décembre 2018 à 09:26
+
 -- Version du serveur :  10.3.11-MariaDB-1:10.3.11+maria~bionic
 -- Version de PHP :  7.2.10-0ubuntu0.18.04.1
 
@@ -27,6 +31,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `tbl_acteurs` (
+
   `id_acteur` int(4) NOT NULL,
   `prenom_acteur` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `nom_acteur` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
@@ -34,11 +39,13 @@ CREATE TABLE `tbl_acteurs` (
   `jour_naissance` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `mois_naissance` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `annee_naissance` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL
+
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Contenu de la table `tbl_acteurs`
 --
+
 
 INSERT INTO `tbl_acteurs` (`id_acteur`, `prenom_acteur`, `nom_acteur`, `bio_acteur`, `jour_naissance`, `mois_naissance`, `annee_naissance`) VALUES
 (1, 'Sam', 'Worthington', 'Samuel Henry John « Sam » Worthington naît à Godalming dans le comté de Surrey par l\'union de Ronald W. Worthington, un employé et Jeanne J. Worthington (née Martyn), femme au foyer. Il a une sœur aînée, Lucinda. Très vite, alors qu\'il est âgé de six mois, ses parents emménagent en Australie dans la banlieue de Perth Warnbro, commune de Rockingham.\n\nIl effectue ses études au John Curtin College of The Arts mais quitte l\'école à dix-sept ans. À dix-neuf ans, il accompagne sa petite amie de l\'époque pour son examen d\'entrée dans le prestigieux National Institute of Dramatic Art (NIDA) de Sydney qui a accueilli entre autres Mel Gibson, Cate Blanchett et Baz Luhrmann : elle se voit refuser l\'admission, mais lui est admis à sa grande surprise. Il sort diplômé du NIDA, en 1998, à l’âge de vingt-deux ans et est acclamé pour sa prestation d’Arthur Wellesley dans la pièce Judas Kiss montée au Belvoir Street Theatre.', '2', 'août', '1976'),
@@ -85,6 +92,7 @@ INSERT INTO `tbl_acteurs` (`id_acteur`, `prenom_acteur`, `nom_acteur`, `bio_acte
 (42, 'Ben', 'Kingsley', 'Ben Kingsley est un acteur britannique d\'ascendance indienne, né le 31 décembre 1943 à Snainton (Yorkshire, Royaume-Uni). ', '', '', ''),
 (43, 'Ralph', 'Fiennes', 'Ralph Fiennes (nom prononcé en anglais /faɪnz/) est un acteur, réalisateur et producteur de cinéma britannique et serbe1, né le 22 décembre 1962 à Ipswich (Suffolk). ', '', '', ''),
 (44, 'Caroline', 'Goodall', 'Caroline Goodall est une actrice anglaise, née le 13 novembre 1959 à Londres (Royaume-Uni). ', '', '', '');
+
 
 -- --------------------------------------------------------
 

@@ -2,6 +2,8 @@
 
 {% block content %}
 
+{% if select %}
+
 <select id="genre" onchange="location = this.value;">
 <option value="">--Choisissez un genre--</option>
 <option value="/annuaire-de-films/films/genre/1">Action</option>
@@ -22,23 +24,28 @@
 <option value="/annuaire-de-films/films/genre/16">Thriller</option>
 <option value="/annuaire-de-films/films/genre/17">Western</option>
 </select>
+{% if isList %}
+<a href="/annuaire-de-films/films/list/0/1">Croissant</a>
+<a href="/annuaire-de-films/films/list/0/0">Décroissant</a>
+{% endif %}
+{% if isGenre %}
+<a href={{"/annuaire-de-films/films/genre/"~idGenre~"/1"}}>Croissant</a>
+<a href={{"/annuaire-de-films/films/genre/"~idGenre~"/0"}}>Décroissant</a>
+{% endif %}
 </br>
 
+{% endif %}
 
-{% for genre in genres %}
 
-{{ genre.titre }}
-{{ genre.annee_de_sortie }}
-</br>
-{% endfor %}
-
-<div class="d-flex flex-wrap justify-content-between">
+<div class="d-flex flex-wrap justify-content-around">
     {% for genre in genres %}
-    <div class="d-flex flex-column pt-5 pb-5">
-        <a href={{"/annuaire-de-films/films/detail/"~genre.id}}><img src="media/{{genre.id}}.jpg" height="300px" width="202px">{{genre.titre}}</a>
-        <div class="d-flex align-items-stretch pt-2">
+    <div class="d-flex flex-column text-center pt-5 pb-5">
+        <a class="d-flex flex-column" href={{"/annuaire-de-films/films/detail/"~genre.id}}><img src="media/{{genre.id}}.jpg" height="300px" width="202px">{{genre.titre}}</a>
+        <div class="d-flex align-items-stretch text-center pt-2">
             {{ genre.annee_de_sortie }}
-            {{ genre.genre }}
+            {{ genre.genres }}
+
+
         </div>
     </div>
     {% endfor %}
@@ -67,8 +74,16 @@
 
 {% for detail in details %}
 
-<img src="/annuaire-de-films/media/{{detail.id}}.jpg" height="300px" width="202px">
+{# <img src="/annuaire-de-films/media/{{detail.id}}.jpg" height="300px" width="202px">
 {{ detail.titre }}
+
+{{ detail.annee_de_sortie }}
+<a href={{"/annuaire-de-films/realisateurs/detail/"~realisateur.id}}>{{ detail.realisateur }}</a>
+<a href={{"/annuaire-de-films/acteurs/detail/"~acteur.id}}>{{ detail.acteur }}</a>
+{{ detail.description }} #}
+
+  
+
 Sorti en : {{ detail.annee_de_sortie }}
 Réalisateur : <a href={{"/annuaire-de-films/realisateurs/detail/"~detail.realid}}>{{ detail.realisateur }}</a>
 Acteurs :
@@ -80,11 +95,12 @@ Acteurs :
 {{ detail.description }}
 Bande annonce : <iframe width="560" height="315" src="{{ detail.bande_annonce|raw  }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+
 {% endfor %}
 
 
 
 
 
+{% endblock content %}
 
-{% endblock %}
