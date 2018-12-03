@@ -2,9 +2,9 @@
 
 $base_url = (strstr($_SERVER["HTTP_HOST"],"8080")=== false)?"http://localhost/annuaire-de-films/":"http://localhost:8080/annuaire-de-films/";
 
-$username = 'root';
-$password = 'online@2017';
-$database ='DB_FILMS';
+$username = 'abdelkrimn';
+$password = 'qyyvy7F9wjO+nA==';
+$database ='abdelkrimn_films';
 $host = 'localhost';
 
     try{

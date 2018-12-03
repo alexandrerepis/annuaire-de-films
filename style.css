@@ -43,7 +43,8 @@
    a:focus {
      outline: thin dotted; }
    a:hover, a:active {
-     outline: 0; }
+     outline: 0;
+    color:rgb(78, 74, 74); }
  
  h1 {
    font-size: 2em;
@@ -1705,6 +1706,9 @@
      padding-top: 30px; }
   .bg-light {
       background-color: transparent!important; 
+  }
+  .navbar-toggler{
+    background-color: white !important;
   }
   .navbar-collapse {
     float: right;
