@@ -3,8 +3,8 @@
 -- https://www.phpmyadmin.net/
 --
 -- Client :  localhost:3306
--- Généré le :  Lun 03 Décembre 2018 à 12:53
--- Version du serveur :  10.3.11-MariaDB-1:10.3.11+maria~bionic
+-- Généré le :  Mar 04 Décembre 2018 à 15:05
+-- Version du serveur :  10.3.11-MariaDB-1:10.3.11+maria~bionic-log
 -- Version de PHP :  7.2.10-0ubuntu0.18.04.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -27,7 +27,6 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `tbl_acteurs` (
-
   `id_acteur` int(4) NOT NULL,
   `prenom_acteur` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `nom_acteur` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
@@ -88,7 +87,6 @@ INSERT INTO `tbl_acteurs` (`id_acteur`, `prenom_acteur`, `nom_acteur`, `bio_acte
 (42, 'Ben', 'Kingsley', 'Ben Kingsley est un acteur britannique d\'ascendance indienne. Ben Kingsley est né en Angleterre, d\'un père médecin, Rahimtulla Harji Bhanji, d\'ascendance gujarati mais né au Kenya (ses grands-parents paternels s\'étant préalablement installés à Zanzibar), tandis que sa mère Anna Lyna Mary (née Goodman) était une actrice et modèle anglaise.\n\nIl s\'intéresse très tôt au théâtre et devient pensionnaire de la Royal Shakespeare Company. Il joue entre autres Othello, Hamlet et The Merry Wives of Windsor de Shakespeare, ou La Cerisaie de Tchekhov. Puis en 1972, il débute au cinéma.', '31', 'décembre', '1943', 'Snainton (Yorkshire)', 'Britannique'),
 (43, 'Ralph', 'Fiennes', 'Ralph Fiennes (nom prononcé en anglais /faɪnz/) est un acteur, réalisateur et producteur de cinéma britannique et serbe. Il a joué dans une trentaine de films parmi lesquels La Liste de Schindler, Quiz Show, Le Patient anglais, Dragon Rouge, The Constant Gardener, la saga Harry Potter, The Reader, Skyfall, 007 Spectre. Ralph Fiennes est célèbre pour le rôle de Lord Voldemort qu\'il incarne dans la saga Harry Potter. Il a également prêté sa voix à des films d\'animation, comme Wallace et Gromit : Le Mystère du lapin-garou.\n\nDeux fois nommé aux Oscars, il est le seul acteur de théâtre à avoir remporté le Tony Award pour avoir joué Hamlet de Shakespeare à Broadway. Ralph Fiennes est aussi l\'un des ambassadeurs britanniques pour l\'Unicef2 et est membre du conseil de la Royal Academy of Dramatic Art3.\n\nIl est le frère de la réalisatrice Martha Fiennes, du compositeur Magnus Fiennes et de l\'acteur Joseph Fiennes.', '22 ', 'décembre', '1962', 'Ipswich (Suffolk)', 'Britannique et Serbe'),
 (44, 'Caroline', 'Goodall', 'Caroline Goodall est une actrice et scénariste anglaise. Elle a été nominée aux AFI Awards pour ses rôles dans la minisérie Cassidy de 1989 et dans le film Hotel Sorrento de 1995. Elle a également joué dans Hook (1991), Cliffhanger (1993), Schindler\'s List (1993), Disclosure (1994), White Squall (1996), The Princess Diaries (2001) et The Dressmaker (2015).', '13', 'novembre', '1959', 'Londres', 'Britannique');
-
 
 -- --------------------------------------------------------
 
@@ -219,7 +217,7 @@ INSERT INTO `tbl_genre` (`id`, `genre`) VALUES
 (12, 'Musical'),
 (13, 'Policier'),
 (14, 'Romance'),
-(15, 'Science-fiction'),
+(15, 'Sci-Fi'),
 (16, 'Thriller'),
 (17, 'Western');
 

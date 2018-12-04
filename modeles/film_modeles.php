@@ -59,9 +59,9 @@ function bdd_filmGenre($id = 0, $order) {
                  FROM tbl_genre g inner JOIN tbl_genre_films as gf ON g.id = gf.id_genres
                  WHERE gf.id_films = f.id) AS genres,
     
-    (SELECT GROUP_CONCAT(DISTINCT concat(r.nom_realisateur, ' ', r.prenom_realisateur) SEPARATOR ',')
-                 FROM tbl_realisateurs as r inner JOIN tbl_realisateurs_films as rf ON r.id_realisateur = rf.id_realisateurs 
-                 WHERE rf.id_films = f.id) AS realisateurs 
+    (SELECT GROUP_CONCAT(DISTINCT g.id SEPARATOR ',')
+                FROM tbl_genre g inner JOIN tbl_genre_films as gf ON g.id = gf.id_genres
+                WHERE gf.id_films = f.id) AS gr 
     
     from tbl_films as f 
     inner join tbl_genre_films as gf on gf.id_films = f.id 
