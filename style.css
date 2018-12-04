@@ -1754,34 +1754,33 @@
 .fasr{
   padding-right: 20px;
 }
-
-
-
-
-    .back_top {
-        position: fixed;
-        bottom: 50px;
-        float: right;
-        right: 50px;
-        /* max-width: 30px; */
-        width: 50px;
-        height: 50px;
-        font-size: 25px;
-        background-color: #f7b053;
-        border-style: none;
-        border-radius: 50%;
-        padding: 10px 0 0 17px;
-        color: white;
+.tri{
+  font-size: 15px;
+}
+.back_top {
+position: fixed;
+bottom: 50px;
+float: right;
+right: 50px;
+/* max-width: 30px; */
+width: 50px;
+height: 50px;
+font-size: 25px;
+background-color: #f7b053;
+border-style: none;
+border-radius: 50%;
+padding: 10px 0 0 17px;
+color: white;
     }
     
-    a:link {
-        text-decoration: none;
-    }
-    
-    .back_top:hover {
-        background-color: rgb(252, 128, 43);
-        color: white;
-    }
+a:link {
+    text-decoration: none;
+}
+
+.back_top:hover {
+    background-color: rgb(252, 128, 43);
+    color: white;
+}
 
 
 @media (max-width: 575px) { 
@@ -1812,6 +1811,3 @@
 @media (min-width: 1200px) { 
   
  }
-
-
-

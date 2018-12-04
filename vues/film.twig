@@ -9,13 +9,13 @@
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
-			<div>
+			{# <div>
 				<ul class="select">
 					<li class="menu-item"><a class="nav-link disabled">Tri par année :<span class="sr-only">(current)</span></a></li>
 					<li class="menu-item"><a class="nav-link" href="/annuaire-de-films/films/list/0/1"><i class="fas fa-sort-amount-up"></i></a></li>
 					<li class="menu-item"><a class="nav-link" href="/annuaire-de-films/films/list/0/0"><i class="fas fa-sort-amount-down"></i></a></li>
 				</ul>
-			</div>
+			</div> #}
 		</nav>
     {% endif %}
 
@@ -53,11 +53,24 @@
         </div>
         <div class="p-3 justify-content-center">
             {% if isGenre %}
-                <div class="btn_tri justify-content-between">
+                <div class="btn_tri d-flex justify-content-center">
+                    <div class="tri d-flex align-items-center pr-2">
+                        Tri par années : 
+                    </div>
                     <a href={{"/annuaire-de-films/films/genre/"~idGenre~"/1"}}><i class="fas fasr fa-sort-amount-up"></i></a>
                     <a href={{"/annuaire-de-films/films/genre/"~idGenre~"/0"}}><i class="fas fa-sort-amount-down"></i></a>
                 </div>
             {% endif %}
+            {% if isList %}
+                <div class="btn_tri d-flex justify-content-center">
+                    <div class="tri d-flex align-items-center pr-2">
+                        Tri par années : 
+                    </div>
+                    <a href="/annuaire-de-films/films/list/0/1"><i class="fas fasr fa-sort-amount-up"></i></a>
+                    <a href="/annuaire-de-films/films/list/0/0"><i class="fas fa-sort-amount-down"></i></a>
+                </div>
+            {% endif %}
+            
         </div>
     </div>
 
