@@ -17,6 +17,10 @@
 			</div>
 		</nav>
         {% endif %}
+         {% if isGenre %}
+            <a href={{"/annuaire-de-films/films/genre/"~idGenre~"/1"}}>Croissant</a>
+            <a href={{"/annuaire-de-films/films/genre/"~idGenre~"/0"}}>Décroissant</a>
+        {% endif %}
 {% endblock nav %}
 
 {% block content %}
@@ -44,13 +48,6 @@
                     <option value="/annuaire-de-films/films/genre/17">Western</option>
                 </select>
             </div>
-
-        {% if isGenre %}
-            <a href={{"/annuaire-de-films/films/genre/"~idGenre~"/1"}}>Croissant</a>
-            <a href={{"/annuaire-de-films/films/genre/"~idGenre~"/0"}}>Décroissant</a>
-        {% endif %}
-          
-
     {% endif %}
 
 
