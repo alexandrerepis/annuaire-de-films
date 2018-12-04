@@ -1,4 +1,4 @@
-<<?php
+<?php
 require_once("modeles/acteur_modeles.php");
 
 function actList() {
@@ -19,14 +19,14 @@ function actDetail() {
 
 switch ($action) {
     case 'list':
-    actList();
-    break;
+        actList();
+        break;
 
     case 'detail':
-    actDetail();
-    break;
+        actDetail();
+        break;
 
     default:
-    actlList();
-    break;
+        actlList();
+        break;
 }

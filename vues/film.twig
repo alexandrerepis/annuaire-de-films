@@ -2,78 +2,82 @@
 
 {% block nav %}
     
-      {% if isList %}
-        		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    {% if isList %}
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
 			<a class="navbar-brand" href="#"></a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
-			<div class="collapse navbar-collapse main-navigation" id="navbarNav">
-				<ul class="navbar-nav">
+			<div>
+				<ul class="select">
 					<li class="menu-item"><a class="nav-link disabled">Tri par année :<span class="sr-only">(current)</span></a></li>
-					<li class="menu-item"><a class="nav-link" href="/annuaire-de-films/films/list/0/1">Croissant</a></li>
-					<li class="menu-item"><a class="nav-link" href="/annuaire-de-films/films/list/0/0">Décroissant</a></li>
+					<li class="menu-item"><a class="nav-link" href="/annuaire-de-films/films/list/0/1"><i class="fas fa-sort-amount-up"></i></a></li>
+					<li class="menu-item"><a class="nav-link" href="/annuaire-de-films/films/list/0/0"><i class="fas fa-sort-amount-down"></i></a></li>
 				</ul>
 			</div>
 		</nav>
-        {% endif %}
+    {% endif %}
 
-        {% if isGenre %}
-            <a href={{"/annuaire-de-films/films/genre/"~idGenre~"/1"}}>Croissant</a>
-            <a href={{"/annuaire-de-films/films/genre/"~idGenre~"/0"}}>Décroissant</a>
-        {% endif %}
-        
 {% endblock nav %}
 
 {% block content %}
 
-    {% if select %}
-            <div class="p-3">
-                <select class="select" id="genre" onchange="location = this.value;">
-                    <option value="">--Choisissez un genre--</option>
-                    <option value="/annuaire-de-films/films/genre/1">Action</option>
-                    <option value="/annuaire-de-films/films/genre/2">Animation</option>
-                    <option value="/annuaire-de-films/films/genre/3">Aventure</option>
-                    <option value="/annuaire-de-films/films/genre/4">Biopic</option>
-                    <option value="/annuaire-de-films/films/genre/5">Comédie</option>
-                    <option value="/annuaire-de-films/films/genre/6">Drame</option>
-                    <option value="/annuaire-de-films/films/genre/7">Horreur</option>
-                    <option value="/annuaire-de-films/films/genre/8">Famille</option>
-                    <option value="/annuaire-de-films/films/genre/9">Fantastique</option>
-                    <option value="/annuaire-de-films/films/genre/10">Guerre</option>
-                    <option value="/annuaire-de-films/films/genre/11">Histoire</option>
-                    <option value="/annuaire-de-films/films/genre/12">Musical</option>
-                    <option value="/annuaire-de-films/films/genre/13">Policier</option>
-                    <option value="/annuaire-de-films/films/genre/14">Romance</option>
-                    <option value="/annuaire-de-films/films/genre/15">Science-fiction</option>
-                    <option value="/annuaire-de-films/films/genre/16">Thriller</option>
-                    <option value="/annuaire-de-films/films/genre/17">Western</option>
-                </select>
-            </div>
-    {% endif %}
-
-
+                        {# Menu select pour le genre des films #}
+    <div class="d-flex flex-row">
+        <div class="">
+            {% if select %}
+                    <div class="p-3">
+                        <select class="select" id="genre" onchange="location = this.value;">
+                            <option value="">--Choisissez un genre--</option>
+                            <option value="/annuaire-de-films/films/genre/1">Action</option>
+                            <option value="/annuaire-de-films/films/genre/2">Animation</option>
+                            <option value="/annuaire-de-films/films/genre/3">Aventure</option>
+                            <option value="/annuaire-de-films/films/genre/4">Biopic</option>
+                            <option value="/annuaire-de-films/films/genre/5">Comédie</option>
+                            <option value="/annuaire-de-films/films/genre/6">Drame</option>
+                            <option value="/annuaire-de-films/films/genre/7">Horreur</option>
+                            <option value="/annuaire-de-films/films/genre/8">Famille</option>
+                            <option value="/annuaire-de-films/films/genre/9">Fantastique</option>
+                            <option value="/annuaire-de-films/films/genre/10">Guerre</option>
+                            <option value="/annuaire-de-films/films/genre/11">Histoire</option>
+                            <option value="/annuaire-de-films/films/genre/12">Musical</option>
+                            <option value="/annuaire-de-films/films/genre/13">Policier</option>
+                            <option value="/annuaire-de-films/films/genre/14">Romance</option>
+                            <option value="/annuaire-de-films/films/genre/15">Science-fiction</option>
+                            <option value="/annuaire-de-films/films/genre/16">Thriller</option>
+                            <option value="/annuaire-de-films/films/genre/17">Western</option>
+                        </select>
+                    </div>
+            {% endif %}
+        </div>
+        <div class="p-3 justify-content-center">
+            {% if isGenre %}
+                <div class="btn_tri justify-content-between">
+                    <a href={{"/annuaire-de-films/films/genre/"~idGenre~"/1"}}><i class="fas fasr fa-sort-amount-up"></i></a>
+                    <a href={{"/annuaire-de-films/films/genre/"~idGenre~"/0"}}><i class="fas fa-sort-amount-down"></i></a>
+                </div>
+            {% endif %}
+        </div>
+    </div>
                         {#Liste les films du genre sélectionner#}
 
     <div class="d-flex flex-wrap justify-content-around">
         {% for genre in genres %}
                 <div class="d-flex flex-wrap flex-column pt-5 pb-5 pr-0 pr-sm-0 pr-md-5">
-                    <a href={{"/annuaire-de-films/films/detail/"~genre.id}}><img class="img-fluid" src="media/{{genre.id}}.jpg" height="300" width="202"></a>
-                        <div class="d-flex flex-column pt-2">
-                            <div>
+                    <a href={{"/annuaire-de-films/films/detail/"~genre.id}}><img class="img-fluid" src="media/tiny/{{genre.id}}.jpg" height="300" width="202"></a>
+                    <div class="d-flex flex-column pt-2">
+                        <div>
                             {{ genre.titre }}
                             {{ genre.annee_de_sortie }}
-                            {{ genre.gr }}
-                            {{ genre.genres }}
-                            </div>
-                                {# <div>
-                                {% set genreids = genre.gr|split(',') %}
-                                {% set genres = genre.genres|split(',') %}
-                                {% for genreid in genreids %}
-                                    <a href="/annuaire-de-films/films/genre/{{genreid}}">{{ genres[loop.index0] }}</a>
-                                {% endfor %}
-                                </div> #}
                         </div>
+                        <div>
+                            {% set genreids = genre.gr|split(',') %}
+                            {% set genres = genre.genres|split(',') %}
+                            {% for genreid in genreids %}
+                                <a href="/annuaire-de-films/films/genre/{{genreid}}">{{ genres[loop.index0] }}</a>
+                            {% endfor %}
+                        </div>
+                    </div>
                 </div>
         {% endfor %}
     </div> 
@@ -84,34 +88,37 @@
     <div class="d-flex flex-wrap justify-content-around">
         {% for film in films %}
             <div class="d-flex flex-wrap flex-column p-4">
-                <a href={{"/annuaire-de-films/films/detail/"~film.id}}><img class="img-fluid" src="media/{{film.id}}.jpg" height="300" width="202"></a>
-                    <div class="pt-2">
-                        <div>
+                <a href={{"/annuaire-de-films/films/detail/"~film.id}}><img class="img-fluid" src="media/tiny/{{film.id}}.jpg" height="300" width="202"></a>
+                <div class="pt-2">
+                    <div>
                         {{ film.titre }}
-                        </div>
-                        <div>
-                        {{ film.annee_de_sortie }}
-                        </div>
-                        <div>
-                            {% set genreids = film.gr|split(',') %}
-                            {% set genre = film.Genre|split(',') %}
-                            {% for genreid in genreids %}
-                                <a href="/annuaire-de-films/films/genre/{{genreid}}">{{ genre[loop.index0]~""}}</a>
-                            {% endfor %}
-                        </div>
                     </div>
+                    <div>
+                        {{ film.annee_de_sortie }}
+                    </div>
+                    <div>
+                        {% set genreids = film.gr|split(',') %}
+                        {% set genre = film.Genre|split(',') %}
+                        {% for genreid in genreids %}
+                            <a href="/annuaire-de-films/films/genre/{{genreid}}">{{ genre[loop.index0]~""}}</a>
+                        {% endfor %}
+                    </div>
+                </div>
             </div>
         {% endfor %}
     </div>
 
                                 {#Détails pour chaque film#}
+
     <div class="p-3">
-        <div class="d-flex flex-row flex-column flex-md-row align-items-center align-items-md-start">
-            {% for detail in details %}
+        {% for detail in details %}
+            <div class="d-flex flex-row flex-column flex-md-row align-items-center align-items-md-start">
                 <img class="img-fluid p-2" src="/annuaire-de-films/media/{{detail.id}}.jpg" height="500" width="370">
                 <div class="d-flex flex-column pl-3">
                     <h2 class="films mt-3 mt-md-0">{{ detail.titre }}</h2></br>
-                    <div><b class="pt-2">Année de sortie : </b>{{ detail.annee_de_sortie }}</br></div>
+                    <div>
+                        <b class="pt-2">Année de sortie : </b>{{ detail.annee_de_sortie }}</br>
+                    </div>
                     <b class="pt-2">Réalisateur : </b><a href={{"/annuaire-de-films/realisateurs/detail/"~detail.realid}}>{{ detail.realisateur }}</a>
                     <b class="pt-2">Acteurs : </b>
                     {% set acteur = detail.acteur|split(',') %}
@@ -120,11 +127,16 @@
                         <a href="/annuaire-de-films/acteurs/detail/{{actid}}">{{ acteur[loop.index0]~""}}</a>
                     {% endfor %}
                 </div>
-        </div>        
-                <div class="pt-3"><b>Synopsis : </b>{{ detail.description }}</div>
-                <div class="pt-3"><b>Bande annonce : </div><div class="mt-2 embed-responsive embed-responsive-16by9">
-                    <iframe src="{{ detail.bande_annonce|raw  }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-            {% endfor %} 
+            </div>        
+            <div class="pt-3">
+                <b>Synopsis : </b>{{ detail.description }}
+            </div>
+            <div class="pt-3">
+                <b>Bande annonce : </b></div>
+            <div class="mt-2 embed-responsive embed-responsive-16by9">
+                <iframe src="{{ detail.bande_annonce|raw  }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        {% endfor %} 
     </div>
+
 {% endblock content %}

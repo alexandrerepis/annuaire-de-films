@@ -5,7 +5,8 @@ $isGenre = false;
 $isList = false;
 
 require_once("modeles/film_modeles.php");
-   
+
+                    // Fonction qui liste tous les films
 function filmList() {
     global $twig, $base_url, $tri, $select, $isList;
     $select = true;
@@ -15,10 +16,10 @@ function filmList() {
     array('films' => $films, "base_url" => $base_url, "select" => $select, "isList" => $isList));
 }
     
+                    // Fonction qui détails par film
 function filmDetail() {
     global $twig, $id, $base_url;
     $films = bdd_filmDetail();
-
     if ($id !=0) {
             $details = bdd_filmDetail($id);
         } elseif ($id < 1 || $id > $maxFilm) {
@@ -27,11 +28,11 @@ function filmDetail() {
     echo $twig->render('film.twig', array('details' => $details, "base_url" => $base_url));
 }
 
+                    // Fonction qui lie les films à leurs genres
 function filmGenre() {
     global $twig, $id, $base_url, $genres, $tri, $select, $isGenre;
     $select = true;
     $isGenre = true;
-    
     if ($id !=0) {
         $tri === 1 ? $genres = bdd_filmGenre($id, 'ASC') : $genres = bdd_filmGenre($id, 'DESC');
     } elseif ($id < 1 || $id > 17) {

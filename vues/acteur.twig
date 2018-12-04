@@ -1,42 +1,56 @@
 {% extends 'accueil.twig' %}
 
-{% block titre %}
-    <h2>Les meilleurs acteurs</h2>
-{% endblock %}
-
-
 {% block content %}
+                        {# Liste tous les acteurs #}
 
     <div class="d-flex flex-wrap justify-content-around">
         {% for acteur in acteurs %}
             <div class="d-flex flex-wrap flex-column pt-5 pb-5">
-                <a href={{"/annuaire-de-films/acteurs/detail/"~acteur.id}}><div><img class="img-fluid" src="/annuaire-de-films/media/photo-acteur/{{acteur.id}}.jpg"
-                height="300px" width="200px"></div>
-                <div>{{ acteur.acteur }}</div>
+                <a href={{"/annuaire-de-films/acteurs/detail/"~acteur.id}}>
+                <div>
+                    <img class="img-fluid" src="/annuaire-de-films/media/photo-acteur/{{acteur.id}}.jpg"
+                    height="300px" width="200px">
+                </div>
+                <div>
+                    {{ acteur.acteur }}
+                </div>
                 </a>
             </div>
         {% endfor %}
     </div>
 
 
+                        {# Détails par acteur #}
+
     {% for detail in details %}
         <div class="d-flex flex-column flex-md-row align-items-center align-items-md-start pt-3">
             <img class="img-fluid" src="/annuaire-de-films/media/photo-acteur/{{detail.id}}.jpg" height="500px" width="370px">
-            {# <div class="d-flex flex-row flex-md-column"> #}
-                <div class="d-flex flex-column pl-0 pl-md-5">
-                    <div class="films pt-2 pt-md-0">{{ detail.acteur }}</div>
-                    <div class="pt-5"><b>Né(e) le : </b>{{ detail.jour_naissance }} {{ detail.mois_naissance }} {{ detail.annee_naissance }}</div>
-                    <div class="pt-3"><b>Lieu de naissance : </b>{{ detail.lieu_naissance }}</div>
-                    <div class="pt-3"><b>Nationalité : </b>{{ detail.nationalite }}</div>
-                    <div class="pt-3"><b>Filmographie : </b></div> 
-                    {% set filmids = detail.filmid|split(',') %}
-                    {% set filmographie = detail.filmographie|split(',') %}
-                    {% for filmid in filmids %}
-                        <a href="/annuaire-de-films/films/detail/{{filmid}}">{{ filmographie[loop.index0]~""}}</a>
-                    {% endfor %}
+            <div class="d-flex flex-column pl-0 pl-md-5">
+                <div class="films pt-2 pt-md-0">
+                    {{ detail.acteur }}
                 </div>
+                <div class="pt-5">
+                    <b>Né(e) le : </b>{{ detail.jour_naissance }} {{ detail.mois_naissance }} {{ detail.annee_naissance }}
+                </div>
+                <div class="pt-3">
+                    <b>Lieu de naissance : </b>{{ detail.lieu_naissance }}
+                </div>
+                <div class="pt-3">
+                    <b>Nationalité : </b>{{ detail.nationalite }}
+                </div>
+                <div class="pt-3">
+                    <b>Filmographie : </b>
+                </div> 
+                {% set filmids = detail.filmid|split(',') %}
+                {% set filmographie = detail.filmographie|split(',') %}
+                {% for filmid in filmids %}
+                    <a href="/annuaire-de-films/films/detail/{{filmid}}">{{ filmographie[loop.index0]~""}}</a>
+                {% endfor %}
+            </div>
         </div>       
-        <div class="pt-3"><b>Biographie : </b>{{ detail.biographie }}</div>
+        <div class="pt-3">
+            <b>Biographie : </b>{{ detail.biographie }}
+        </div>
     {% endfor %}
 
 {% endblock %}
