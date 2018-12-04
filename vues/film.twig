@@ -84,7 +84,7 @@
     <div class="d-flex flex-wrap justify-content-around">
         {% for film in films %}
             <div class="d-flex flex-wrap flex-column p-4">
-                <a href={{"/annuaire-de-films/films/detail/"~film.id}}><img class="img-fluid" src="media/affiche/tiny-affiche/{{film.id}}.jpg" height="300" width="202"></a>
+                <a href={{"/annuaire-de-films/films/detail/"~film.id}}><img class="img-fluid" src="media/affiche/tiny-affiche/{{film.id}}.jpg"></a>
                 <div class="pt-2">
                     <div class="titre">
                         {{ film.titre }}
@@ -110,7 +110,7 @@
     <div class="p-3">
         {% for detail in details %}
             <div class="d-flex flex-row flex-column flex-md-row align-items-center align-items-md-start">
-                <img class="img-fluid p-2" src="/annuaire-de-films/media/affiche/affiche/{{detail.id}}.jpg" height="500" width="370">
+                <img class="img-fluid p-2" src="/annuaire-de-films/media/affiche/{{detail.id}}.jpg">
                 <div class="d-flex flex-column pl-3">
                     <h2 class="films mt-3 mt-md-0">{{ detail.titre }}</h2></br>
                     <div>
