@@ -80,7 +80,7 @@
     <div class="d-flex flex-wrap justify-content-around">
         {% for genre in genres %}
                 <div class="d-flex flex-wrap flex-column pt-5 pb-5 pr-0 pr-sm-0 pr-md-5">
-                    <a href={{"/annuaire-de-films/films/detail/"~genre.id}}><img class="img-fluid" src="media/tiny/{{genre.id}}.jpg" height="300" width="202"></a>
+                    <a href={{"/annuaire-de-films/films/detail/"~genre.id}}><img class="img-fluid" src="media/affiche/affiche/{{genre.id}}.jpg" height="300" width="202"></a>
                     <div class="d-flex flex-column pt-2">
                         <div>
                             {{ genre.titre }}
