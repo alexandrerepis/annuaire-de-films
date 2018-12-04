@@ -1,30 +1,10 @@
 {% extends 'accueil.twig' %}
 
-{% block nav %}
-
-    
-    {% if isList %}
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-			<a class="navbar-brand" href="#"></a>
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			{# <div>
-				<ul class="select">
-					<li class="menu-item"><a class="nav-link disabled">Tri par année :<span class="sr-only">(current)</span></a></li>
-					<li class="menu-item"><a class="nav-link" href="/annuaire-de-films/films/list/0/1"><i class="fas fa-sort-amount-up"></i></a></li>
-					<li class="menu-item"><a class="nav-link" href="/annuaire-de-films/films/list/0/0"><i class="fas fa-sort-amount-down"></i></a></li>
-				</ul>
-			</div> #}
-		</nav>
-    {% endif %}
-
-{% endblock nav %}
 
 {% block content %}
 
                         {# Menu select pour le genre des films #}
-    <div class="d-flex flex-row">
+    <div class="d-flex flex-column flex-md-row">
         <div class="">
             {% if select %}
                     <div class="p-3">
@@ -80,13 +60,13 @@
     <div class="d-flex flex-wrap justify-content-around">
         {% for genre in genres %}
                 <div class="d-flex flex-wrap flex-column pt-5 pb-5 pr-0 pr-sm-0 pr-md-5">
-                    <a href={{"/annuaire-de-films/films/detail/"~genre.id}}><img class="img-fluid" src="media/affiche/affiche/{{genre.id}}.jpg" height="300" width="202"></a>
+                    <a href={{"/annuaire-de-films/films/detail/"~genre.id}}><img class="img-fluid" src="media/affiche/tiny-affiche/{{genre.id}}.jpg" height="300" width="202"></a>
                     <div class="d-flex flex-column pt-2">
-                        <div>
+                        <div class="titre">
                             {{ genre.titre }}
                             {{ genre.annee_de_sortie }}
                         </div>
-                        <div>
+                        <div class="titre">
                             {% set genreids = genre.gr|split(',') %}
                             {% set genres = genre.genres|split(',') %}
                             {% for genreid in genreids %}
@@ -106,13 +86,13 @@
             <div class="d-flex flex-wrap flex-column p-4">
                 <a href={{"/annuaire-de-films/films/detail/"~film.id}}><img class="img-fluid" src="media/affiche/tiny-affiche/{{film.id}}.jpg"></a>
                 <div class="pt-2">
-                    <div>
+                    <div class="titre">
                         {{ film.titre }}
                     </div>
                     <div>
                         {{ film.annee_de_sortie }}
                     </div>
-                    <div>
+                    <div class="titre">
                         {% set genreids = film.gr|split(',') %}
                         {% set genre = film.Genre|split(',') %}
                         {% for genreid in genreids %}
