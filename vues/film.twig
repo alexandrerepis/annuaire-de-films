@@ -1,32 +1,23 @@
 {% extends 'accueil.twig' %}
 
 {% block nav %}
-    
-      {% if isList %}
-        		<nav class="navbar navbar-expand-lg navbar-light bg-light">
-			<a class="navbar-brand" href="#"></a>
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="collapse navbar-collapse main-navigation" id="navbarNav">
-				<ul class="navbar-nav">
-					<li class="menu-item"><a class="nav-link disabled">Tri par année :<span class="sr-only">(current)</span></a></li>
-					<li class="menu-item"><a class="nav-link" href="/annuaire-de-films/films/list/0/1">Croissant</a></li>
-					<li class="menu-item"><a class="nav-link" href="/annuaire-de-films/films/list/0/0">Décroissant</a></li>
-				</ul>
-			</div>
-		</nav>
+    {% if isList %}
+       
         {% endif %}
+      
 
-        {% if isGenre %}
+
+            {# {% if isGenre %}
             <a href={{"/annuaire-de-films/films/genre/"~idGenre~"/1"}}>Croissant</a>
             <a href={{"/annuaire-de-films/films/genre/"~idGenre~"/0"}}>Décroissant</a>
-        {% endif %}
+
+            {% endif %} #}
         
+
 {% endblock nav %}
 
 {% block content %}
-
+        
     {% if select %}
             <div class="p-3">
                 <select class="select" id="genre" onchange="location = this.value;">
@@ -49,9 +40,21 @@
                     <option value="/annuaire-de-films/films/genre/16">Thriller</option>
                     <option value="/annuaire-de-films/films/genre/17">Western</option>
                 </select>
+
+            
             </div>
 
-        
+        {% if isList %}
+        	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			    <div class="collapse navbar-collapse main-navigation" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="menu-item"><a class="nav-link disabled tri">Tri par année :<span class="sr-only">(current)</span></a></li>
+                        <li class="menu-item"><a class="nav-link" href="/annuaire-de-films/films/list/0/1">Croissant</a></li>
+                        <li class="menu-item"><a class="nav-link" href="/annuaire-de-films/films/list/0/0">Décroissant</a></li>
+                    </ul>
+			    </div>
+		    </nav>
+        {% endif %}
           
 
     {% endif %}
@@ -79,7 +82,7 @@
                 </div>
         {% endfor %}
     </div> 
-
+        
 
                                 {#Liste tous les films /Accueil#}
 
@@ -105,6 +108,7 @@
             </div>
         {% endfor %}
     </div>
+    
 
                                 {#Détails pour chaque film#}
     <div class="p-3">
