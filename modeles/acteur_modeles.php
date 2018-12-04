@@ -1,6 +1,6 @@
 <?php
 
-require 'movies.php';
+require 'connexion-bdd.php';
 
 function bdd_actList() {
 

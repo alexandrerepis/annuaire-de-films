@@ -1,5 +1,5 @@
 <?php
-require_once 'movies.php';
+require_once 'connexion-bdd.php';
 
 // echo $controller;
 // echo $action;
