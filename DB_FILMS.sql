@@ -3,8 +3,8 @@
 -- https://www.phpmyadmin.net/
 --
 -- Client :  localhost:3306
--- Généré le :  Mar 04 Décembre 2018 à 15:05
--- Version du serveur :  10.3.11-MariaDB-1:10.3.11+maria~bionic-log
+-- Généré le :  Mar 04 Décembre 2018 à 15:04
+-- Version du serveur :  10.3.11-MariaDB-1:10.3.11+maria~bionic
 -- Version de PHP :  7.2.10-0ubuntu0.18.04.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
