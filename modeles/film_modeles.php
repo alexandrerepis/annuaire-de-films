@@ -1,5 +1,5 @@
 <?php
-require_once 'movies.php';
+require_once 'connexion-bdd.php';
 
 // echo $controller;
 // echo $action;
@@ -22,7 +22,6 @@ function bdd_filmList($order) {
     INNER JOIN tbl_realisateurs ON tbl_realisateurs_films.id_realisateurs = tbl_realisateurs.id_realisateur";
     $request .= ($order === 'ASC')? " GROUP BY titre ORDER BY tbl_films.annee_de_sortie ASC" : " GROUP BY titre ORDER BY tbl_films.annee_de_sortie DESC";
     $response = $bdd->prepare($request);
-    // $response->bindValue(':order', $order, PDO::PARAM_STR);
     $response->execute();
     return $response->fetchAll(PDO::FETCH_ASSOC);
 
@@ -60,9 +59,9 @@ function bdd_filmGenre($id = 0, $order) {
                  FROM tbl_genre g inner JOIN tbl_genre_films as gf ON g.id = gf.id_genres
                  WHERE gf.id_films = f.id) AS genres,
     
-    (SELECT GROUP_CONCAT(DISTINCT concat(r.nom_realisateur, ' ', r.prenom_realisateur) SEPARATOR ',')
-                 FROM tbl_realisateurs as r inner JOIN tbl_realisateurs_films as rf ON r.id_realisateur = rf.id_realisateurs 
-                 WHERE rf.id_films = f.id) AS realisateurs 
+    (SELECT GROUP_CONCAT(DISTINCT g.id SEPARATOR ',')
+                FROM tbl_genre g inner JOIN tbl_genre_films as gf ON g.id = gf.id_genres
+                WHERE gf.id_films = f.id) AS gr 
     
     from tbl_films as f 
     inner join tbl_genre_films as gf on gf.id_films = f.id 
